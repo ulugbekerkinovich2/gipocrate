@@ -874,27 +874,21 @@ for i in list_links:
     #         kasallik_haqida2 = kasallik_haqida + '\n' + kasallik_haqida1
     #         print(kasallik_haqida2)
 
-    try:
-        h1_text = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
-        if h1_text == 'Абсцесс':
-            kasallik_sabablari = \
-                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[1].text
-            kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
-                By.TAG_NAME, 'ul').text
-            kasallik_sabablari2 = kasallik_sabablari + "\n" + kasallik_sabablari1
-            print(kasallik_sabablari2)
-        elif h1_text == 'Авитаминоз':
-            kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[1].text
-            kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(By.TAG_NAME, 'ul').text
-            kasallik_sabablari2 = kasallik_sabablari +'\n'+ kasallik_sabablari1
-            print(kasallik_sabablari2)
-        # elif h1_text == 'Аденовирус':
-        #     kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[1].text
-        #     kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[2].text
-        #     kasallik_sabablari2 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(By.TAG_NAME, 'ul').text
-        #     kasallik_sabablari3 = kasallik_sabablari +'\n'+
 
-    except:
-        print("topilmadi")
+
+
+
+
+
+
+
+
+
+
+
+
+
+    # except:
+    #     print("topilmadi")
 
 driver.close()
