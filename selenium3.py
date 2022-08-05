@@ -275,8 +275,8 @@ for i in list_links:
                 driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'ul')[12].text
             print(6.2, diagnostika)
 
-            davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[
-                4].text
+            davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'ul')[
+                13].text
             print(6.3, davolanish)
 
 
@@ -322,20 +322,20 @@ for i in list_links:
             kasallik_sabablari6 = \
                 driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[8].text
             kasallik_sabablari7 = \
-                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'ul')[1].text
+                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'ul')[4].text
             kasallik_sabablari8 = \
                 driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[9].text
             kasallik_sabablari9 = kasallik_sabablari + '\n' + kasallik_sabablari1 + '\n' + kasallik_sabablari2 + '\n' + kasallik_sabablari3 + '\n' + kasallik_sabablari4 + '\n' + kasallik_sabablari5 + '\n' + kasallik_sabablari6 + '\n' + kasallik_sabablari7 + '\n' + kasallik_sabablari8
             print(8, kasallik_sabablari9)
 
             kasallik_asoratlari = \
-                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'ul')[2].text
+                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'ul')[11].text
             kasallik_asoratlari1 = \
                 driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[13].text
             kasallik_asoratlari2 = \
                 driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[14].text
             kasallik_asoratlari3 = \
-                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'ul')[3].text
+                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'ul')[12].text
             kasallik_asoratlari4 = \
                 driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[15].text
             kasallik_asoratlari5 = kasallik_asoratlari + '\n' + kasallik_asoratlari1 + '\n' + kasallik_asoratlari2 + '\n' + kasallik_asoratlari3 + '\n' + kasallik_asoratlari4
@@ -380,11 +380,11 @@ for i in list_links:
             print(9, kasallik_sabablari)
 
             kasallik_asoratlari = \
-                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[1].text
+                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'ul')[1].text
             print(9.1, kasallik_asoratlari)
 
             diagnostika = \
-                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'ul')[2].text
+                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'ul')[11].text
             print(9.2, diagnostika)
 
             davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[
@@ -415,7 +415,7 @@ for i in list_links:
             kasallik_asoratlari1 = \
                 driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[19].text
             kasallik_asoratlari2 = \
-                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'ul')[5].text
+                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'ul')[14].text
             kasallik_asoratlari3 = \
                 driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[20].text
             kasallik_asoratlari4 = \
