@@ -1,6 +1,10 @@
+import sqlite3
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
+connect = sqlite3.connect('db.sqlite3')
+cursor = connect.cursor()
 driver = webdriver.Chrome(executable_path="/home/ulugbek/PycharmProjects/gipokrat/chromedriver")
 
 driver.get("https://illness.docdoc.ru/")
@@ -26,13 +30,17 @@ for i in list_links:
     try:  # kasallik_nomlari
         kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
         print(kasallik_nomi)
+
+    # break
+
+        # break
     except:
         print('not -------')
 
     try:
 
         kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
-        print(kasallik_haqida)
+        print('--------', kasallik_haqida)
 
     except:
         if driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
@@ -45,6 +53,7 @@ for i in list_links:
                                                                                                           'ul').text
             kasallik_haqida3 = kasallik_haqida + '\n' + kasallik_haqida1 + '\n' + kasallik_haqida2
             print('4', kasallik_haqida3)
+
         if driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                             'h1').text == 'Болезнь Иценко-Кушинга':
             kasallik_haqida = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
@@ -830,7 +839,8 @@ for i in list_links:
                                                                                                          'p').text
             print(kasallik_haqida)
 
-        elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,'h1').text == 'Гиперактивный мочевой пузырь':
+        elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
+                                                                              'h1').text == 'Гиперактивный мочевой пузырь':
             kasallik_haqida = driver.find_element(By.ID, 'diseases_article_static_content').find_element(By.TAG_NAME,
                                                                                                          'p').text
             print(kasallik_haqida)
@@ -870,25 +880,14 @@ for i in list_links:
             kasallik_haqida = driver.find_element(By.ID, 'diseases_article_static_content').find_element(By.TAG_NAME,
                                                                                                          'p').text
             kasallik_haqida1 = \
-            driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[1].text
+                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[1].text
             kasallik_haqida2 = kasallik_haqida + '\n' + kasallik_haqida1
             print(kasallik_haqida2)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    # except:
-    #     print("topilmadi")
+# except:
+#     print("topilmadi")
 
 driver.close()
+
+# row = cur.execute('SELECT * FROM basic_app_kasallik_nomi ').fetchall()
+# print(row, 'database')
