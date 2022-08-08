@@ -11,5 +11,7 @@ admin.site.register(models.Kasalikk_sabablari)
 admin.site.register(models.Kasallik_asoratlari)
 admin.site.register(models.Diagnostika)
 admin.site.register(models.Davolanish)
+admin.site.register(models.Болезни1)
+admin.site.register(models.Лекарства1)
 
 
