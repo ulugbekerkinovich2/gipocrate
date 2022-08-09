@@ -25,7 +25,7 @@ while i < 700:
 # print(list_links)
 for i in list_links:
     driver.get(f'{i}')
-    if i == 'https://illness.docdoc.ru/astigmatizm ' or i == 'https://illness.docdoc.ru/beshenstvo' or i == 'https://illness.docdoc.ru/bolezn_gjuntera' or i == 'https://illness.docdoc.ru/bolezn_uippla' or i == 'https://illness.docdoc.ru/borodavki' or i == 'https://illness.docdoc.ru/bolezn_hantingtona' or i == 'https://illness.docdoc.ru/bolezn_Shljattera' or i == 'https://illness.docdoc.ru/blokada_nozhki_puchka_Gisa':
+    if i == 'https://illness.docdoc.ru/astigmatizm ' or i == 'https://illness.docdoc.ru/beshenstvo' or i == 'https://illness.docdoc.ru/bolezn_gjuntera' or i == 'https://illness.docdoc.ru/bolezn_uippla' or i == 'https://illness.docdoc.ru/borodavki' or i == 'https://illness.docdoc.ru/bolezn_hantingtona' or i == 'https://illness.docdoc.ru/bolezn_Shljattera' or i == 'https://illness.docdoc.ru/blokada_nozhki_puchka_Gisa' or i == 'https://illness.docdoc.ru/virus_pappilomi_cheloveka':
         continue
     # if i in list_links:
     #     continue
@@ -33,18 +33,10 @@ for i in list_links:
         if driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text == 'Абсцесс':
 
             kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
-            cursor.execute("INSERT INTO basic_app_болезни1 (title) VALUES (?)", (kasallik_nomi,))
-            connect.commit()
-            print(kasallik_nomi)
-            a = cursor.execute('SELECT * FROM basic_app_болезни1')
-            print(a)
+            print('--------', kasallik_nomi)
 
             kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
             print('--------', kasallik_haqida)
-            # cursor.execute("INSERT INTO basic_app_болезни1 (description) VALUES (?)", (kasallik_haqida,))
-            # connect.commit()
-            # a = cursor.execute('SELECT * FROM basic_app_болезни1')
-            # print(a)
 
             kasallik_sabablari = \
                 driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[1].text
@@ -53,11 +45,6 @@ for i in list_links:
             kasallik_sabablari2 = kasallik_sabablari + "\n" + kasallik_sabablari1
             print(1, kasallik_sabablari2)
 
-            # cursor.execute("INSERT INTO basic_app_болезни1 (description1) VALUES (?)", (kasallik_sabablari2,))
-            # connect.commit()
-            # a = cursor.execute('SELECT * FROM basic_app_болезни1')
-            # print(a)
-
             kasallik_asoratlari = \
                 driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[2].text
             kasallik_asoratlari1 = \
@@ -65,22 +52,12 @@ for i in list_links:
             kasallik_asoratlari2 = kasallik_asoratlari + '\n' + kasallik_asoratlari1
             print(1.1, kasallik_asoratlari2)
 
-            # cursor.execute("INSERT INTO basic_app_болезни1 (description2) VALUES (?)", (kasallik_asoratlari2,))
-            # connect.commit()
-            # a = cursor.execute('SELECT * FROM basic_app_болезни1')
-            # print(a)
-
             diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[
                 4].text
             diagnostika1 = \
                 driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'ul')[11].text
             diagnostika2 = diagnostika + '\n' + diagnostika1
             print(1.2, diagnostika2)
-
-            # cursor.execute("INSERT INTO basic_app_болезни1 (description3) VALUES (?)", (diagnostika2,))
-            # connect.commit()
-            # a = cursor.execute('SELECT * FROM basic_app_болезни1')
-            # print(a)
 
             davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[
                 5].text
@@ -91,21 +68,22 @@ for i in list_links:
             davolanish3 = davolanish + '\n' + davolanish1 + '\n' + davolanish2
             print(1.3, davolanish3)
 
-            # cursor.execute("INSERT INTO basic_app_болезни1 (description4) VALUES (?)", (davolanish3,))
+            # cursor.execute(
+            #     "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+            #     (kasallik_nomi, kasallik_haqida, kasallik_sabablari2, kasallik_asoratlari2, diagnostika2, davolanish3))
             # connect.commit()
             # a = cursor.execute('SELECT * FROM basic_app_болезни1')
             # print(a)
-            break
+
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text == 'Авитаминоз':
 
-            # kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
-            # cursor.execute("INSERT INTO basic_app_болезни1 (title) VALUES (?)", (kasallik_nomi,))
-            # connect.commit()
-            # print(kasallik_nomi)
-            # a = cursor.execute('SELECT * FROM basic_app_болезни1')
-            # print(a)
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
 
             kasallik_sabablari = \
                 driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[1].text
@@ -136,16 +114,21 @@ for i in list_links:
                 8].text
             davolanish3 = davolanish + '\n' + davolanish1 + '\n' + davolanish2
             print(2.3, davolanish3)
+            # cursor.execute(
+            #     "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+            #     (kasallik_nomi, kasallik_haqida, kasallik_sabablari2, kasallik_asoratlari2, diagnostika2, davolanish3))
+            # connect.commit()
+            # a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            # print(a)
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text == 'Аденовирус':
 
             kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
-            # cursor.execute("INSERT INTO basic_app_болезни1 (title) VALUES (?)", (kasallik_nomi,))
-            # connect.commit()
-            # print(kasallik_nomi)
-            # a = cursor.execute('SELECT * FROM basic_app_болезни1')
-            # print(a)
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
 
             kasallik_sabablari = \
                 driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[1].text
@@ -185,6 +168,13 @@ for i in list_links:
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == "Аденома гипофиза":
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = \
                 driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[9].text
             kasallik_sabablari1 = \
@@ -239,6 +229,12 @@ for i in list_links:
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == "Аденома простаты":
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = \
                 driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[2].text
             kasallik_sabablari1 = \
@@ -312,6 +308,13 @@ for i in list_links:
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == "Аденома щитовидной железы":
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = \
                 driver.find_element(By.ID, 'diseases_article_static_content').find_element(By.TAG_NAME, 'ul').text
             kasallik_sabablari1 = \
@@ -364,6 +367,16 @@ for i in list_links:
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text == 'Аднексит':
+
+            kasallik_haqida = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
+                By.CLASS_NAME,
+                'illnes-short-description').text
+            kasallik_haqida1 = \
+                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[
+                    1].text
+            kasallik_haqida2 = kasallik_haqida + '\n' + kasallik_haqida1
+            print(kasallik_haqida2)
+
             kasallik_sabablari = \
                 driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[3].text
             kasallik_sabablari1 = \
@@ -451,8 +464,12 @@ for i in list_links:
             print(9.2, diagnostika)
 
             davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[
-                3].text
-            print(9.3, davolanish)
+                5].text
+            davolanish1 = \
+                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'ul')[
+                    3].text
+            davolanish2 = davolanish + '\n' + davolanish1
+            print(9.3, davolanish2)
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text == 'Алалия':
@@ -474,7 +491,7 @@ for i in list_links:
             print(10, kasallik_sabablari7)
 
             kasallik_asoratlari = \
-                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[17].text
+                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[18].text
             kasallik_asoratlari1 = \
                 driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[19].text
             kasallik_asoratlari2 = \
@@ -483,8 +500,12 @@ for i in list_links:
                 driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[20].text
             kasallik_asoratlari4 = \
                 driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[21].text
-            kasallik_asoratlari5 = kasallik_asoratlari + '\n' + kasallik_asoratlari1 + '\n' + kasallik_asoratlari2 + '\n' + kasallik_asoratlari3 + '\n' + kasallik_asoratlari4
-            print(10.1, kasallik_asoratlari5)
+            kasallik_asoratlari5 = \
+                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[22].text
+            kasallik_asoratlari6 = \
+                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[23].text
+            kasallik_asoratlari7 = kasallik_asoratlari + '\n' + kasallik_asoratlari1 + '\n' + kasallik_asoratlari2 + '\n' + kasallik_asoratlari3 + '\n' + kasallik_asoratlari4 + '\n' + kasallik_asoratlari5 + '\n' + kasallik_asoratlari6
+            print(10.1, kasallik_asoratlari7)
 
             diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[
                 31].text
@@ -672,6 +693,15 @@ for i in list_links:
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Аллергия лекарственная':
+            kasallik_haqida = driver.find_element(By.ID, 'diseases_article_static_content').find_element(By.TAG_NAME,
+                                                                                                         'p').text
+            kasallik_haqida1 = \
+                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[1].text
+            kasallik_haqida2 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(By.TAG_NAME,
+                                                                                                          'ul').text
+            kasallik_haqida3 = kasallik_haqida + '\n' + kasallik_haqida1 + '\n' + kasallik_haqida2
+            print('4', kasallik_haqida3)
+
             kasallik_sabablari = \
                 driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[2].text
             kasallik_sabablari1 = \
@@ -796,6 +826,23 @@ for i in list_links:
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Алопеция андрогенная':
+
+            kasallik_haqida = driver.find_element(By.ID, 'diseases_article_static_content').find_element(By.TAG_NAME,
+                                                                                                         'p').text
+            kasallik_haqida1 = \
+                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[1].text
+            kasallik_haqida2 = kasallik_haqida + '\n' + kasallik_haqida1
+            print(kasallik_haqida2)
+
+            kasallik_haqida = \
+                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[
+                    0].text
+            kasallik_haqida1 = \
+                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[
+                    1].text
+            kasallik_haqida2 = kasallik_haqida + '\n' + kasallik_haqida1
+            print(kasallik_haqida2)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[2].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -1637,6 +1684,16 @@ for i in list_links:
             print(35.3, davolanish4)
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text == 'Апноэ':
+
+            kasallik_haqida = driver.find_element(By.ID, 'diseases_article_static_content').find_element(By.TAG_NAME,
+                                                                                                         'p').text
+            kasallik_haqida1 = \
+                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[1].text
+            kasallik_haqida2 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(By.TAG_NAME,
+                                                                                                          'ul').text
+            kasallik_haqida3 = kasallik_haqida + '\n' + kasallik_haqida1 + '\n' + kasallik_haqida2
+            print(kasallik_haqida3)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[2].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -1723,7 +1780,7 @@ for i in list_links:
                 By.TAG_NAME, 'ul')[15].text
             davolanish3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[24].text
-            davolanis4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+            davolanish4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[25].text
             davolanish5 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4
             print(37.3, davolanish5)
@@ -2153,7 +2210,7 @@ for i in list_links:
             diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[12].text
             diagnostika1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'ul')[19].text
+                By.TAG_NAME, 'ul')[12].text
             diagnostika2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[13].text
             diagnostika3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -2170,7 +2227,7 @@ for i in list_links:
             davolanish2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[20].text
             davolanish3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'ul')[21].text
+                By.TAG_NAME, 'ul')[22].text
             davolanish4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[21].text
             davolanish5 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -2785,6 +2842,33 @@ for i in list_links:
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Бери-бери':
+            kasallik_haqida = \
+                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[
+                    0].text
+            kasallik_haqida1 = \
+                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[
+                    1].text
+            kasallik_haqida2 = \
+                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[
+                    2].text
+            kasallik_haqida3 = \
+                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[
+                    3].text
+            kasallik_haqida4 = \
+                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'ul')[
+                    0].text
+            kasallik_haqida5 = \
+                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[
+                    4].text
+            kasallik_haqida6 = \
+                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'ul')[
+                    1].text
+            kasallik_haqida7 = \
+                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[
+                    5].text
+            kasallik_haqida8 = kasallik_haqida + '\n' + kasallik_haqida1 + '\n' + kasallik_haqida2 + '\n' + kasallik_haqida3 + '\n' + kasallik_haqida4 + '\n' + kasallik_haqida5 + '\n' + kasallik_haqida6 + '\n' + kasallik_haqida7
+            print(kasallik_haqida8)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[6].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -3008,13 +3092,11 @@ for i in list_links:
                 By.TAG_NAME, 'ul')[13].text
             print(65.2, diagnostika)
 
-            davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'p')[6].text
             davolanish1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'ul')[14].text
             davolanish2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[7].text
-            davolanish3 = davolanish + '\n' + davolanish1
+            davolanish3 = davolanish1 + '\n' + davolanish2
             print(65.3, davolanish3)
 
 
@@ -3247,7 +3329,7 @@ for i in list_links:
             print(70.2, diagnostika2)
 
             davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'ul')[13].text
+                By.TAG_NAME, 'ul')[12].text
             print(70.3, davolanish)
 
 
@@ -3288,6 +3370,10 @@ for i in list_links:
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Болезнь Иценко-Кушинга':
+            kasallik_haqida = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
+                By.TAG_NAME, 'p').text
+            print(kasallik_haqida, )
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
                 By.TAG_NAME, 'ul').text
             print(72, kasallik_sabablari)
@@ -3342,6 +3428,20 @@ for i in list_links:
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Болезнь Паркинсона':
+
+            kasallik_haqida = driver.find_element(By.ID, 'diseases_article_static_content').find_element(By.TAG_NAME,
+                                                                                                         'p').text
+            kasallik_haqida1 = \
+                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[1].text
+            kasallik_haqida2 = \
+                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[2].text
+            kasallik_haqida3 = \
+                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[3].text
+            kasallik_haqida4 = \
+                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[4].text
+            kasallik_haqida5 = kasallik_haqida + '\n' + kasallik_haqida1 + '\n' + kasallik_haqida2 + '\n' + kasallik_haqida3 + '\n' + kasallik_haqida4
+            print(kasallik_haqida5)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[12].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -3402,6 +3502,36 @@ for i in list_links:
                 By.TAG_NAME, 'ul').text
             kasallik_sabablari3 = kasallik_sabablari + '\n' + kasallik_sabablari1 + '\n' + kasallik_sabablari2
             print(75, kasallik_sabablari3)
+
+            kasallik_asoratlari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[4].text
+            kasallik_asoratlari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[1].text
+            kasallik_asoratlari2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[5].text
+            kasallik_asoratlari3 = kasallik_asoratlari + '\n' + kasallik_asoratlari1 + '\n' + kasallik_asoratlari2
+            print(75.1, kasallik_asoratlari3)
+
+            diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[7].text
+            diagnostika1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[11].text
+            diagnostika2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[8].text
+            diagnostika3 = diagnostika + '\n' + diagnostika1 + '\n' + diagnostika2
+            print(75.2, diagnostika3)
+
+            davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[9].text
+            davolanish1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[12].text
+            davolanish2 = davolanish + '\n' + davolanish1
+            print(75.3, davolanish2)
+
+
+
+
+
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Болезнь Пика':
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -3414,6 +3544,39 @@ for i in list_links:
                 By.TAG_NAME, 'ul').text
             kasallik_sabablari4 = kasallik_sabablari + '\n' + kasallik_sabablari1 + '\n' + kasallik_sabablari2 + '\n' + kasallik_sabablari3
             print(76, kasallik_sabablari4)
+
+            kasallik_asoratlari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[4].text
+            kasallik_asoratlari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[1].text
+            kasallik_asoratlari2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[5].text
+            kasallik_asoratlari3 = kasallik_asoratlari + '\n' + kasallik_asoratlari1 + '\n' + kasallik_asoratlari2
+            print(76.1, kasallik_asoratlari3)
+
+            diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[7].text
+            diagnostika1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[8].text
+            diagnostika2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[2].text
+            diagnostika3 = diagnostika + '\n' + diagnostika1 + '\n' + diagnostika2
+            print(76.2, diagnostika3)
+
+            davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[9].text
+            davolanish1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[10].text
+            davolanish2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[3].text
+            davolanish3 = davolanish + '\n' + davolanish1 + '\n' + davolanish2
+            print(76.3, davolanish3)
+
+
+
+
+
+
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Болезнь Симмондса':
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -3428,6 +3591,38 @@ for i in list_links:
                 By.TAG_NAME, 'p')[1].text
             kasallik_sabablari5 = kasallik_sabablari + '\n' + kasallik_sabablari1 + '\n' + kasallik_sabablari2 + '\n' + kasallik_sabablari3 + '\n' + kasallik_sabablari4
             print(77, kasallik_sabablari5)
+
+            kasallik_asoratlari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[4].text
+            kasallik_asoratlari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[3].text
+            kasallik_asoratlari2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[2].text
+            kasallik_asoratlari3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[4].text
+            kasallik_asoratlari4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[5].text
+            kasallik_asoratlari5 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[3].text
+            kasallik_asoratlari6 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[6].text
+            kasallik_asoratlari7 = kasallik_asoratlari + '\n' + kasallik_asoratlari1 + '\n' + kasallik_asoratlari2 + '\n' + kasallik_asoratlari3 + '\n' + kasallik_asoratlari4 + '\n' + kasallik_asoratlari5 + '\n' + kasallik_asoratlari6
+            print(77.1, kasallik_asoratlari7)
+
+            diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[11].text
+            diagnostika1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[12].text
+            diagnostika2 = diagnostika + '\n' + diagnostika1
+            print(77.2, diagnostika2)
+
+            davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[13].text
+            print(77.3, davolanish)
+
+
+
+
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Бородавки подошвенные':
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -3437,13 +3632,1193 @@ for i in list_links:
             kasallik_sabablari2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[8].text
             kasallik_sabablari3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'p')[6].text
+                By.TAG_NAME, 'p')[9].text
             kasallik_sabablari4 = kasallik_sabablari + '\n' + kasallik_sabablari1 + '\n' + kasallik_sabablari2 + '\n' + kasallik_sabablari3
             print(78, kasallik_sabablari4)
+
+            kasallik_asoratlari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[4].text
+            kasallik_asoratlari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
+                By.TAG_NAME, 'ul').text
+            kasallik_asoratlari2 = kasallik_asoratlari + '\n' + kasallik_asoratlari1
+            print(78.1, kasallik_asoratlari2)
+
+            diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[10].text
+            diagnostika1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[10].text
+            diagnostika2 = diagnostika + '\n' + diagnostika1
+            print(78.2, diagnostika2)
+
+            davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[12].text
+            davolanish1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[13].text
+            davolanish2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[14].text
+            davolanish3 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
+                By.TAG_NAME, 'h3').text
+            davolanish4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[15].text
+            davolanish5 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[16].text
+            davolanish6 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[17].text
+            davolanish7 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[18].text
+            davolanish8 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[19].text
+            davolanish9 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[20].text
+            davolanish10 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[21].text
+            davolanish11 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[22].text
+            davolanish12 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[23].text
+            davolanish13 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[11].text
+            davolanish14 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[24].text
+            davolanish15 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[12].text
+            davolanish16 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[25].text
+            davolanish17 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[26].text
+            davolanish18 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[27].text
+            davolanish19 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[28].text
+            davolanish20 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'h3')[1].text
+            davolanish21 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[17].text
+            davolanish22 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[18].text
+            davolanish23 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[19].text
+            davolanish24 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[20].text
+            davolanish25 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[21].text
+            davolanish26 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[13].text
+            davolanish27 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[22].text
+            davolanish28 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[23].text
+            davolanish29 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[1].text
+            davolanish30 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4 + '\n' + davolanish5 + '\n' + davolanish6 + '\n' + davolanish7 + '\n' + davolanish8 + '\n' + davolanish9 + '\n' + davolanish10 + '\n' + davolanish11 + '\n' + davolanish12 + '\n' + davolanish13 + '\n' + davolanish14 + '\n' + davolanish15 + '\n' + davolanish16 + '\n' + davolanish17 + '\n' + davolanish18 + '\n' + davolanish19 + '\n' + davolanish20 + '\n' + davolanish21 + '\n' + davolanish22 + '\n' + davolanish23 + '\n' + davolanish24 + '\n' + davolanish25 + '\n' + davolanish26 + '\n' + davolanish27 + '\n' + davolanish28
+            print(78.3, davolanish30)
+
+        elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
+                                                                              'h1').text == 'Брадикардия':
+            kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[2].text
+            kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[1].text
+            kasallik_sabablari2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[3].text
+            kasallik_sabablari3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[2].text
+            kasallik_asoratlari4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[4].text
+            kasallik_sabablari5 = kasallik_sabablari + '\n' + kasallik_sabablari1 + '\n' + kasallik_sabablari2 + '\n' + kasallik_sabablari3 + '\n' + kasallik_asoratlari4
+            print(79, kasallik_sabablari5)
+
+            kasallik_asoratlari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[6].text
+            kasallik_asoratlari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[3].text
+            kasallik_asoratlari2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[7].text
+            kasallik_asoratlari3 = kasallik_asoratlari + '\n' + kasallik_asoratlari1 + '\n' + kasallik_asoratlari2
+            print(79.1, kasallik_asoratlari3)
+
+            diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[9].text
+            diagnostika1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[13].text
+            diagnostika2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[10].text
+            diagnostika3 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
+                By.TAG_NAME, 'strong').text
+            diagnostika4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[11].text
+            diagnostika5 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[14].text
+            diagnostika6 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'strong')[1].text
+            diagnostika7 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[12].text
+            diagnostika8 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[15].text
+            diagnostika9 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[13].text
+            diagnostika10 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[14].text
+            diagnostika11 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[16].text
+            diagnostika12 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[15].text
+            diagnostika13 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'strong')[2].text
+            diagnostika14 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[16].text
+            diagnostika15 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[16].text
+            diagnostika16 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[17].text
+            diagnostika17 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[17].text
+            diagnostika18 = diagnostika + '\n' + diagnostika1 + '\n' + diagnostika2 + '\n' + diagnostika3 + '\n' + diagnostika4 + '\n' + diagnostika5 + '\n' + diagnostika6 + '\n' + diagnostika7 + '\n' + diagnostika8 + '\n' + diagnostika9 + '\n' + '\n' + diagnostika10 + '\n' + diagnostika11 + '\n' + diagnostika12 + '\n' + diagnostika13 + '\n' + diagnostika14 + '\n' + diagnostika15 + '\n' + diagnostika16 + '\n' + diagnostika17
+            print(79.2, diagnostika18)
+
+            davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[19].text
+            davolanish1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[20].text
+            davolanish2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[21].text
+            davolanish3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[18].text
+            davolanish4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[22].text
+            davolanish5 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[23].text
+            davolanish6 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[24].text
+            davolanish7 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[25].text
+            davolanish8 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'h3')[1].text
+            davolanish9 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[26].text
+            davolanish10 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[27].text
+            davolanish11 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[28].text
+            davolanish12 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[29].text
+            davolanish13 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[30].text
+            davolanish14 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[19].text
+            davolanish15 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[31].text
+            davolanish16 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[32].text
+            davolanish17 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[33].text
+            davolanish18 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4 + '\n' + davolanish5 + '\n' + davolanish6 + '\n' + davolanish7 + '\n' + davolanish8 + '\n' + davolanish9 + '\n' + davolanish10 + '\n' + davolanish11 + '\n' + davolanish12 + '\n' + davolanish13 + '\n' + davolanish14 + '\n' + davolanish15 + '\n' + davolanish16 + '\n' + davolanish17
+            print(79.3, davolanish18)
+
+        elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
+                                                                              'h1').text == 'Бронхиальная астма':
+            kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[2].text
+            kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[3].text
+            kasallik_sabablari2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[1].text
+            kasallik_sabablari3 = kasallik_sabablari + '\n' + kasallik_sabablari1 + '\n' + kasallik_sabablari2
+            print(80, kasallik_sabablari3)
+
+            kasallik_asoratlari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[4].text
+            kasallik_asoratlari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[2].text
+            kasallik_asoratlari2 = kasallik_asoratlari + '\n' + kasallik_asoratlari1
+            print(80.1, kasallik_asoratlari)
+
+            diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[6].text
+            diagnostika1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[12].text
+            diagnostika2 = diagnostika + '\n' + diagnostika1
+            print(80.2, diagnostika2)
+
+            davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[7].text
+            davolanish1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[13].text
+            davolanish2 = davolanish + '\n' + davolanish1
+            print(80.3, davolanish2)
+
+
+        elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
+                                                                              'h1').text == 'Бронхиолит':
+            kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[1].text
+            kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[2].text
+            kasallik_sabablari2 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
+                By.TAG_NAME, 'ul').text
+            kasallik_sabablari3 = kasallik_sabablari + '\n' + kasallik_sabablari1 + '\n' + kasallik_sabablari2
+            print(81, kasallik_sabablari3)
+
+            kasallik_asoratlari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[3].text
+            kasallik_asoratlari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[1].text
+            kasallik_asoratlari2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[4].text
+            kasallik_asoratlari3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[2].text
+            kasallik_asoratlari4 = kasallik_asoratlari + '\n' + kasallik_asoratlari1 + '\n' + kasallik_asoratlari2 + '\n' + kasallik_asoratlari3
+            print(81.1, kasallik_asoratlari4)
+
+            diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[6].text
+            diagnostika1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[12].text
+            diagnostika2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[7].text
+            diagnostika3 = diagnostika + '\n' + diagnostika1 + '\n' + diagnostika2
+            print(81.2, diagnostika3)
+
+            davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[8].text
+            davolanish1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[13].text
+            davolanish2 = davolanish + '\n' + davolanish1
+            print(81.3, davolanish2)
+
+        elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
+                                                                              'h1').text == 'Бронхит':
+            kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[2].text
+            kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[1].text
+            kasallik_sabablari2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[3].text
+            kasallik_sabablari3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[2].text
+            kasallik_sabablari4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[4].text
+            kasallik_sabablari5 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[3].text
+            kasallik_sabablari6 = kasallik_sabablari + '\n' + kasallik_sabablari1 + '\n' + kasallik_sabablari2 + '\n' + kasallik_sabablari3 + '\n' + kasallik_sabablari4 + '\n' + kasallik_sabablari5
+            print(82, kasallik_sabablari6)
+
+            kasallik_asoratlari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[5].text
+            kasallik_asoratlari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[4].text
+            kasallik_asoratlari2 = kasallik_asoratlari + '\n' + kasallik_asoratlari1
+            print(82.1, kasallik_asoratlari2)
+
+            diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[
+                7].text
+            diagnostika1 = \
+                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'ul')[14].text
+            diagnostika2 = diagnostika + '\n' + diagnostika1
+            print(82.2, diagnostika2)
+
+            davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[8].text
+            davolanish1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[15].text
+            davolanish2 = davolanish + '\n' + davolanish1
+            print(82.3, davolanish2)
+
+
+        elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
+                                                                              'h1').text == 'Бронхит обструктивный':
+            kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[6].text
+            kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[1].text
+            kasallik_sabablari2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[7].text
+            kasallik_sabablari3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[8].text
+            kasallik_sabablari4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[9].text
+            kasallik_sabablari5 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[2].text
+            kasallik_sabablari6 = kasallik_sabablari + '\n' + kasallik_sabablari1 + '\n' + kasallik_sabablari2 + '\n' + kasallik_sabablari3 + '\n' + kasallik_sabablari4 + '\n' + kasallik_sabablari5
+            print(83, kasallik_sabablari6)
+
+            kasallik_asoratlari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[10].text
+            kasallik_asoratlari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[11].text
+            kasallik_asoratlari2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[11].text
+            kasallik_asoratlari3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[12].text
+            kasallik_asoratlari4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[13].text
+            kasallik_asoratlari5 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[14].text
+            kasallik_asoratlari6 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[15].text
+            kasallik_asoratlari7 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[13].text
+            kasallik_asoratlari8 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[16].text
+            kasallik_asoratlari9 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[17].text
+            kasallik_asoratlari10 = kasallik_asoratlari + '\n' + kasallik_asoratlari1 + '\n' + kasallik_asoratlari2 + '\n' + kasallik_asoratlari3 + '\n' + kasallik_asoratlari4 + '\n' + kasallik_asoratlari5 + '\n' + kasallik_asoratlari6 + '\n' + kasallik_asoratlari7 + '\n' + kasallik_asoratlari8 + '\n' + kasallik_asoratlari9
+            print(83.1, kasallik_asoratlari10)
+
+            diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[19].text
+            diagnostika1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[14].text
+            diagnostika2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[20].text
+            diagnostika3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[15].text
+            diagnostika4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[21].text
+            diagnostika5 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[22].text
+            diagnostika6 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[16].text
+            diagnostika7 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[23].text
+            diagnostika8 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[24].text
+            diagnostika9 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[25].text
+            diagnostika10 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[26].text
+            diagnostika11 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[27].text
+            diagnostika12 = diagnostika + '\n' + diagnostika1 + '\n' + diagnostika2 + '\n' + diagnostika3 + '\n' + diagnostika4 + '\n' + diagnostika5 + '\n' + diagnostika6 + '\n' + diagnostika7 + '\n' + diagnostika8 + '\n' + diagnostika9 + '\n' + '\n' + diagnostika10 + '\n' + diagnostika11
+            print(83.2, diagnostika12)
+
+            davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[28].text
+            davolanish1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[17].text
+            davolanish2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[29].text
+            davolanish3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[18].text
+            davolanish4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[30].text
+            davolanish5 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[19].text
+            davolanish6 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[31].text
+            davolanish7 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[20].text
+            davolanish8 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[32].text
+            davolanish9 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[21].text
+            davolanish10 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[33].text
+            davolanish11 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[22].text
+            davolanish12 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[34].text
+            davolanish13 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[35].text
+            davolanish14 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[36].text
+            davolanish15 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[23].text
+            davolanish16 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4 + '\n' + davolanish5 + '\n' + davolanish6 + '\n' + davolanish7 + '\n' + davolanish8 + '\n' + davolanish9 + '\n' + davolanish10 + '\n' + davolanish11 + '\n' + davolanish12 + '\n' + davolanish13 + '\n' + davolanish14 + '\n' + davolanish15
+            print(83.3, davolanish16)
+
+        elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
+                                                                              'h1').text == 'Булимия':
+            kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[1].text
+            kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
+                By.TAG_NAME, 'ul').text
+            kasallik_sabablari2 = kasallik_sabablari + '\n' + kasallik_sabablari1
+            print(84, kasallik_sabablari2)
+
+            kasallik_asoratlari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[2].text
+            kasallik_asoratlari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[1].text
+            kasallik_asoratlari2 = kasallik_asoratlari + '\n' + kasallik_asoratlari1
+            print(84.1, kasallik_asoratlari2)
+
+            diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[4].text
+            print(84.2, diagnostika)
+
+            davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[5].text
+            davolanish1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[11].text
+            davolanish2 = davolanish + '\n' + davolanish1
+            print(84.3, davolanish2)
+
+        elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
+                                                                              'h1').text == 'Бурсит':
+            kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[0].text
+            print(85, kasallik_sabablari)
+
+            kasallik_asoratlari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[1].text
+            print(85.1, kasallik_asoratlari)
+
+            diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[11].text
+            print(85.2, diagnostika)
+
+            davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[5].text
+            davolanish1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[12].text
+            davolanish2 = davolanish + '\n' + davolanish1
+            print(85.3, davolanish2)
+
+        elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
+                                                                              'h1').text == 'Булимия':
+            kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[1].text
+            kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
+                By.TAG_NAME, 'ul').text
+            kasallik_sabablari2 = kasallik_sabablari + '\n' + kasallik_sabablari1
+            print(86, kasallik_sabablari2)
+
+            kasallik_asoratlari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[2].text
+            kasallik_asoratlari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[1].text
+            kasallik_asoratlari2 = kasallik_asoratlari + '\n' + kasallik_asoratlari1
+            print(86.1, kasallik_asoratlari2)
+
+            diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[4].text
+            print(86.2, diagnostika)
+
+            davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[5].text
+            davolanish1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[11].text
+            print(86.3, davolanish)
+
+        elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
+                                                                              'h1').text == 'Вагинит':
+            kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
+                By.TAG_NAME, 'p').text
+            kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[1].text
+            kasallik_sabablari2 = kasallik_sabablari + '\n' + kasallik_sabablari1
+            print(87, kasallik_sabablari2)
+
+            kasallik_asoratlari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[2].text
+            kasallik_asoratlari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[1].text
+            kasallik_asoratlari2 = kasallik_asoratlari + '\n' + kasallik_asoratlari1
+            print(87.1, kasallik_asoratlari2)
+
+            diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[3].text
+            diagnostika1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[11].text
+            diagnostika2 = diagnostika + '\n' + diagnostika1
+            print(87.2, diagnostika2)
+
+            davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[4].text
+            davolanish1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[12].text
+            davolanish2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[5].text
+            davolanish3 = davolanish + '\n' + davolanish1 + '\n' + davolanish2
+            print(87.3, davolanish3)
+
+        elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
+                                                                              'h1').text == 'Вальгусная деформация стопы у детей':
+            kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[5].text
+            kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[6].text
+            kasallik_sabablari2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[2].text
+            kasallik_sabablari3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[7].text
+            kasallik_sabablari4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[3].text
+            kasallik_sabablari5 = kasallik_sabablari + '\n' + kasallik_sabablari1 + '\n' + kasallik_sabablari2 + '\n' + kasallik_sabablari3 + '\n' + kasallik_sabablari4
+            print(88, kasallik_sabablari5)
+
+            kasallik_asoratlari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[8].text
+            kasallik_asoratlari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[13].text
+            kasallik_asoratlari2 = kasallik_asoratlari + '\n' + kasallik_asoratlari1
+            print(88.1, kasallik_asoratlari)
+
+            diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[10].text
+            diagnostika1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[14].text
+            diagnostika2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[12].text
+            diagnostika3 = diagnostika + '\n' + diagnostika1 + '\n' + diagnostika2
+            print(88.2, diagnostika2)
+
+            davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[13].text
+            davolanish1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[15].text
+            davolanish2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[14].text
+            davolanish3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[15].text
+            davolanish4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[16].text
+            davolanish5 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4
+            print(88.3, davolanish5)
+
+        elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
+                                                                              'h1').text == 'Варикозное расширение вен':
+            kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[2].text
+            kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
+                By.TAG_NAME, 'ul').text
+            kasallik_sabablari2 = kasallik_sabablari + '\n' + kasallik_sabablari1
+            print(89, kasallik_sabablari2)
+
+            kasallik_asoratlari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[3].text
+            kasallik_asoratlari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[1].text
+            kasallik_asoratlari2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[3].text
+            kasallik_asoratlari3 = kasallik_asoratlari + '\n' + kasallik_asoratlari1 + '\n' + kasallik_asoratlari2
+            print(89.1, kasallik_asoratlari3)
+
+            diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[5].text
+            diagnostika1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[11].text
+            diagnostika2 = diagnostika + '\n' + diagnostika1
+            print(89.2, diagnostika2)
+
+            davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[6].text
+            davolanish1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[12].text
+            davolanish2 = davolanish + '\n' + davolanish1
+            print(89.3, davolanish2)
+
+        elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
+                                                                              'h1').text == 'Варикоцеле':
+            kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[6].text
+            kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[7].text
+            kasallik_sabablari2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[1].text
+            kasallik_sabablari3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[8].text
+            kasallik_sabablari4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[2].text
+            kasallik_sabablari5 = kasallik_sabablari + '\n' + kasallik_sabablari1 + '\n' + kasallik_sabablari2 + '\n' + kasallik_sabablari3 + '\n' + kasallik_sabablari4
+            print(90, kasallik_sabablari5)
+
+            kasallik_asoratlari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[9].text
+            kasallik_asoratlari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[10].text
+            kasallik_asoratlari2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[3].text
+            kasallik_asoratlari3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[11].text
+            kasallik_asoratlari4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[12].text
+            kasallik_asoratlari5 = kasallik_asoratlari + '\n' + kasallik_asoratlari1 + '\n' + kasallik_asoratlari2 + '\n' + kasallik_asoratlari3 + '\n' + kasallik_asoratlari4
+            print(90.1, kasallik_asoratlari5)
+
+            diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[14].text
+            diagnostika1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[13].text
+            diagnostika2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[15].text
+            diagnostika3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[16].text
+            diagnostika4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[17].text
+            diagnostika5 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[14].text
+            diagnostika6 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[18].text
+            diagnostika7 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[19].text
+            diagnostika8 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[20].text
+            diagnostika9 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[21].text
+            diagnostika10 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[15].text
+            diagnostika11 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[22].text
+            diagnostika12 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[23].text
+            diagnostika13 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[24].text
+            diagnostika14 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[16].text
+            diagnostika15 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[25].text
+            diagnostika16 = diagnostika + '\n' + diagnostika1 + '\n' + diagnostika2 + '\n' + diagnostika3 + '\n' + diagnostika4 + '\n' + diagnostika5 + '\n' + diagnostika6 + '\n' + diagnostika7 + '\n' + diagnostika8 + '\n' + diagnostika9 + '\n' + '\n' + diagnostika10 + '\n' + diagnostika11 + '\n' + diagnostika12 + '\n' + diagnostika13 + '\n' + diagnostika14 + '\n' + diagnostika15
+            print(90.2, diagnostika16)
+
+            davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[26].text
+            davolanish1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[27].text
+            davolanish2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[28].text
+            davolanish3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[29].text
+            davolanish4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[17].text
+            davolanish5 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[30].text
+            davolanish6 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[31].text
+            davolanish7 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[32].text
+            davolanish8 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[18].text
+            davolanish9 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[33].text
+            davolanish10 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[34].text
+            davolanish11 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[35].text
+            davolanish12 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[36].text
+            davolanish13 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[37].text
+            davolanish14 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[38].text
+            davolanish15 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[39].text
+            davolanish16 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[40].text
+            davolanish17 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[41].text
+            davolanish18 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[19].text
+            davolanish19 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[42].text
+            davolanish20 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[20].text
+            davolanish21 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[43].text
+            davolanish22 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[44].text
+            davolanish23 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[45].text
+            davolanish24 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[46].text
+            davolanish25 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[21].text
+            davolanish26 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[47].text
+            davolanish27 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[48].text
+            davolanish28 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[22].text
+            davolanish29 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4 + '\n' + davolanish5 + '\n' + davolanish6 + '\n' + davolanish7 + '\n' + davolanish8 + '\n' + davolanish9 + '\n' + davolanish10 + '\n' + davolanish11 + '\n' + davolanish12 + '\n' + davolanish13 + '\n' + davolanish14 + '\n' + davolanish15 + '\n' + davolanish16 + '\n' + davolanish17 + '\n' + davolanish18 + '\n' + davolanish19 + '\n' + davolanish20 + '\n' + davolanish21 + '\n' + davolanish22 + '\n' + davolanish23 + '\n' + davolanish24 + '\n' + davolanish25 + '\n' + davolanish26 + '\n' + davolanish27 + '\n' + davolanish28
+            print(90.3, davolanish29)
+
+        elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
+                                                                              'h1').text == 'Васкулит':
+            kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[3].text
+            kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[23].text
+            kasallik_sabablari2 = kasallik_sabablari + '\n' + kasallik_sabablari1
+            print(91, kasallik_sabablari2)
+
+            kasallik_asoratlari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[4].text
+            kasallik_asoratlari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[24].text
+            kasallik_asoratlari2 = kasallik_asoratlari + '\n' + kasallik_asoratlari1
+            print(91.1, kasallik_asoratlari2)
+
+            diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[6].text
+            diagnostika1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[25].text
+            diagnostika2 = diagnostika + '\n' + diagnostika1
+            print(91.1, diagnostika2)
+
+            davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[7].text
+            davolanish1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[26].text
+            davolanish2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[48].text
+            davolanish3 = davolanish + '\n' + davolanish1 + '\n' + davolanish2
+            print(91.1, davolanish3)
+
+        elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
+                                                                              'h1').text == 'Васкулит геморрагический':
+            kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[1].text
+            kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
+                By.TAG_NAME, 'ul').text
+            kasallik_sabablari2 = kasallik_sabablari + '\n' + kasallik_sabablari1
+            print(91, kasallik_sabablari2)
+
+            kasallik_asoratlari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[2].text
+            kasallik_asoratlari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[1].text
+            kasallik_asoratlari2 = kasallik_asoratlari + '\n' + kasallik_asoratlari1
+            print(91.1, kasallik_asoratlari2)
+
+            diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[4].text
+            diagnostika1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[5].text
+            diagnostika2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[5].text
+            diagnostika3 = diagnostika + '\n' + diagnostika1 + '\n' + diagnostika2
+            print(91.2, diagnostika3)
+
+            davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[5].text
+            davolanish1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[6].text
+            davolanish2 = davolanish + '\n' + davolanish1
+            print(91.3, davolanish2)
+
+        elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text == 'Вегетоневроз':
+
+            kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[1].text
+            kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
+                By.TAG_NAME, 'ul').text
+            kasallik_sabablari2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[2].text
+            kasallik_sabablari3 = kasallik_sabablari + '\n' + kasallik_sabablari1 + '\n' + kasallik_sabablari2
+            print(92, kasallik_sabablari3)
+
+            kasallik_asoratlari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[3].text
+            kasallik_asoratlari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[10].text
+            kasallik_asoratlari2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[4].text
+            kasallik_asoratlari3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[11].text
+            kasallik_asoratlari4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[5].text
+            kasallik_asoratlari5 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[12].text
+            kasallik_asoratlari6 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[6].text
+            kasallik_asoratlari7 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[13].text
+            kasallik_asoratlari8 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[7].text
+            kasallik_asoratlari9 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[8].text
+            kasallik_asoratlari10 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[14].text
+            kasallik_asoratlari11 = kasallik_asoratlari + '\n' + kasallik_asoratlari1 + '\n' + kasallik_asoratlari2 + '\n' + kasallik_asoratlari3 + '\n' + kasallik_asoratlari4 + '\n' + kasallik_asoratlari5 + '\n' + kasallik_asoratlari6 + '\n' + kasallik_asoratlari7 + '\n' + kasallik_asoratlari8 + '\n' + kasallik_asoratlari9 + '\n' + kasallik_asoratlari10
+            print(92.1, kasallik_asoratlari11)
+
+            diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[10].text
+            diagnostika1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[11].text
+            diagnostika2 = diagnostika + '\n' + diagnostika1
+            print(92.2, diagnostika2)
+
+            davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[12].text
+            davolanish1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[13].text
+            davolanish2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[14].text
+            davolanish3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[15].text
+            davolanish4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[16].text
+            davolanish5 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[17].text
+            davolanish6 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[15].text
+            davolanish7 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4 + '\n' + davolanish5 + '\n' + davolanish6
+            print(92.3, davolanish7)
+
+        elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
+                                                                              'h1').text == 'Вегетососудистая дистония (ВСД)':
+            kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[5].text
+            kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[3].text
+            kasallik_sabablari2 = kasallik_sabablari + '\n' + kasallik_sabablari1
+            print(93, kasallik_sabablari)
+
+            kasallik_asoratlari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[6].text
+            kasallik_asoratlari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[13].text
+            kasallik_asoratlari2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[7].text
+            kasallik_asoratlari3 = kasallik_asoratlari + '\n' + kasallik_asoratlari1 + '\n' + kasallik_asoratlari2
+            print(93.1, kasallik_asoratlari3)
+
+            diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[9].text
+            diagnostika1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[23].text
+            diagnostika2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[10].text
+            diagnostika3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[24].text
+            diagnostika4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[19].text
+            diagnostika5 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[25].text
+            diagnostika6 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[20].text
+            diagnostika7 = diagnostika + '\n' + diagnostika1 + '\n' + diagnostika2 + '\n' + diagnostika3 + '\n' + diagnostika4 + '\n' + diagnostika5 + '\n' + diagnostika6
+            print(93.2, diagnostika7)
+
+            davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[21].text
+            davolanish1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[22].text
+            davolanish2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[23].text
+            davolanish3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[24].text
+            davolanish4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[25].text
+            davolanish5 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[26].text
+            davolanish6 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[27].text
+            davolanish7 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[28].text
+            davolanish8 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[29].text
+            davolanish9 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[30].text
+            davolanish10 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[31].text
+            davolanish11 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[32].text
+            davolanish12 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[33].text
+            davolanish13 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[34].text
+            davolanish14 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[35].text
+            davolanish15 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[36].text
+            davolanish16 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[37].text
+            davolanish17 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[26].text
+            davolanish18 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4 + '\n' + davolanish5 + '\n' + davolanish6 + '\n' + davolanish7 + '\n' + davolanish8 + '\n' + davolanish9 + '\n' + davolanish10 + '\n' + davolanish11 + '\n' + davolanish12 + '\n' + davolanish13 + '\n' + davolanish14 + '\n' + davolanish15 + '\n' + davolanish16 + '\n' + davolanish17
+            print(93.3, davolanish18)
+
+        elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
+                                                                              'h1').text == 'Везикулит':
+            kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[1].text
+            kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[2].text
+            kasallik_sabablari2 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
+                By.TAG_NAME, 'ul').text
+            kasallik_sabablari3 = kasallik_sabablari + '\n' + kasallik_sabablari1 + '\n' + kasallik_sabablari2
+            print(94, kasallik_sabablari3)
+
+            kasallik_asoratlari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[1].text
+            kasallik_asoratlari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[3].text
+            kasallik_asoratlari2 = kasallik_asoratlari + '\n' + kasallik_asoratlari1
+            print(94.1, kasallik_asoratlari2)
+
+            diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[11].text
+            diagnostika1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[4].text
+            diagnostika2 = diagnostika + '\n' + diagnostika1
+            print(94.2, diagnostika2)
+
+            davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[6].text
+            davolanish1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[7].text
+            davolanish2 = davolanish + '\n' + davolanish1
+            print(94.3, davolanish2)
+
+        elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
+                                                                              'h1').text == 'Венозная недостаточность':
+            kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[1].text
+            kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[2].text
+            kasallik_sabablari2 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
+                By.TAG_NAME, 'ul').text
+            kasallik_sabablari3 = kasallik_sabablari + '\n' + kasallik_sabablari1 + '\n' + kasallik_sabablari2
+            print(95, kasallik_sabablari3)
+
+            kasallik_asoratlari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[3].text
+            kasallik_asoratlari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[1].text
+            kasallik_asoratlari2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[4].text
+            kasallik_asoratlari3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[5].text
+            kasallik_asoratlari4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[2].text
+            kasallik_asoratlari5 = kasallik_asoratlari + '\n' + kasallik_asoratlari1 + '\n' + kasallik_asoratlari2 + '\n' + kasallik_asoratlari3 + '\n' + kasallik_asoratlari4
+            print(95.1, kasallik_asoratlari5)
+
+            diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[7].text
+            diagnostika1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[12].text
+            diagnostika2 = diagnostika + '\n' + diagnostika1
+            print(95.2, diagnostika2)
+
+            davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[8].text
+            davolanish1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[13].text
+            davolanish2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[9].text
+            davolanish3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[14].text
+            davolanish4 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3
+            print(95.3, davolanish4)
+
+        elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
+                                                                              'h1').text == 'Вертебро-базилярная недостаточность (ВБН)':
+            kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
+                By.TAG_NAME, 'ul').text
+            print(96, kasallik_sabablari)
+
+            kasallik_asoratlari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[1].text
+            print(96.1, kasallik_asoratlari)
+
+            diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[3].text
+            diagnostika1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[1].text
+            diagnostika2 = diagnostika + '\n' + diagnostika1
+            print(96.2, diagnostika2)
+
+            davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[11].text
+            print(96.3, davolanish)
+
+        elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
+                                                                              'h1').text == 'Ветрянка (ветряная оспа)':
+            kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[6].text
+            kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[7].text
+            kasallik_sabablari2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[2].text
+            kasallik_sabablari3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[8].text
+            kasallik_sabablari4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[9].text
+            kasallik_sabablari5 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[10].text
+            kasallik_sabablari6 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[11].text
+            kasallik_sabablari7 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[12].text
+            kasallik_sabablari8 = kasallik_sabablari + '\n' + kasallik_sabablari1 + '\n' + kasallik_sabablari2 + '\n' + kasallik_sabablari3 + '\n' + kasallik_sabablari4 + '\n' + kasallik_sabablari5 + '\n' + kasallik_sabablari6 + '\n' + kasallik_sabablari7
+            print(97, kasallik_sabablari8)
+
+            kasallik_asoratlari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[13].text
+            kasallik_asoratlari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[12].text
+            kasallik_asoratlari2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[14].text
+            kasallik_asoratlari3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[15].text
+            kasallik_asoratlari4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[16].text
+            kasallik_asoratlari5 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[17].text
+            kasallik_asoratlari6 = kasallik_asoratlari + '\n' + kasallik_asoratlari1 + '\n' + kasallik_asoratlari2 + '\n' + kasallik_asoratlari3 + '\n' + kasallik_asoratlari4 + '\n' + kasallik_asoratlari5
+            print(97.1, kasallik_asoratlari6)
+
+            diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[19].text
+            diagnostika1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[20].text
+            diagnostika2 = diagnostika + '\n' + diagnostika1
+            print(97.2, diagnostika2)
+
+            davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[21].text
+            davolanish1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[22].text
+            davolanish2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[22].text
+            davolanish3 = davolanish + '\n' + davolanish1 + '\n' + davolanish2
+            print(97.3, davolanish3)
+
+        elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
+                                                                              'h1').text == 'Вирильный синдром':
+            kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[3].text
+            kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[1].text
+            kasallik_sabablari2 = kasallik_sabablari + '\n' + kasallik_sabablari1
+            print(98, kasallik_sabablari2)
+
+            kasallik_asoratlari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[2].text
+            print(98.1, kasallik_asoratlari)
+
+            diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[5].text
+            diagnostika1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[12].text
+            diagnostika2 = diagnostika + '\n' + diagnostika1
+            print(98.2, diagnostika2)
+
+            davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[13].text
+            davolanish1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[9].text
+            davolanish2 = davolanish + '\n' + davolanish1
+            print(98.3, davolanish2)
+
+        elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
+                                                                              'h1').text == 'Вирус Эпштейна-Барра':
+            kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[2].text
+            print(99, kasallik_sabablari)
+
+            kasallik_asoratlari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[3].text
+            kasallik_asoratlari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[1].text
+            kasallik_asoratlari2 = kasallik_asoratlari + '\n' + kasallik_asoratlari1
+            print(99.1, kasallik_asoratlari2)
+
+            diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[5].text
+            diagnostika1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[11].text
+            diagnostika2 = diagnostika + '\n' + diagnostika1
+            print(99.2, diagnostika2)
+
+            davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[6].text
+            davolanish1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[12].text
+            davolanish2 = davolanish + '\n' + davolanish1
+            print(99.3, davolanish2)
+
+        elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
+                                                                              'h1').text == 'Витилиго':
+            kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[1].text
+            kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
+                By.TAG_NAME, 'ul').text
+            kasallik_sabablari2 = kasallik_sabablari + '\n' + kasallik_sabablari1
+            print(100, kasallik_sabablari2)
+
+            kasallik_asoratlari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[2].text
+            kasallik_asoratlari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[1].text
+            kasallik_asoratlari2 = kasallik_asoratlari + '\n' + kasallik_asoratlari1
+            print(100.1, kasallik_asoratlari2)
+
+            diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[4].text
+            diagnostika1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[11].text
+            diagnostika2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[5].text
+            diagnostika3 = diagnostika + '\n' + diagnostika1 + '\n' + diagnostika2
+            print(100.2, diagnostika3)
+
+            davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[6].text
+            davolanish1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[12].text
+            davolanish2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[7].text
+            davolanish3 = davolanish +'\n'+ davolanish1 +'\n'+ davolanish
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 
     except:
         print('topilmadi-----------')
+        continue
 driver.close()
