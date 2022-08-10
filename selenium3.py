@@ -68,12 +68,12 @@ for i in list_links:
             davolanish3 = davolanish + '\n' + davolanish1 + '\n' + davolanish2
             print(1.3, davolanish3)
 
-            # cursor.execute(
-            #     "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
-            #     (kasallik_nomi, kasallik_haqida, kasallik_sabablari2, kasallik_asoratlari2, diagnostika2, davolanish3))
-            # connect.commit()
-            # a = cursor.execute('SELECT * FROM basic_app_болезни1')
-            # print(a)
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari2, kasallik_asoratlari2, diagnostika2, davolanish3))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
 
 
 
@@ -114,12 +114,12 @@ for i in list_links:
                 8].text
             davolanish3 = davolanish + '\n' + davolanish1 + '\n' + davolanish2
             print(2.3, davolanish3)
-            # cursor.execute(
-            #     "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
-            #     (kasallik_nomi, kasallik_haqida, kasallik_sabablari2, kasallik_asoratlari2, diagnostika2, davolanish3))
-            # connect.commit()
-            # a = cursor.execute('SELECT * FROM basic_app_болезни1')
-            # print(a)
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari2, kasallik_asoratlari2, diagnostika2, davolanish3))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text == 'Аденовирус':
@@ -163,6 +163,13 @@ for i in list_links:
                 8].text
             davolanish3 = davolanish + '\n' + davolanish1 + '\n' + davolanish2
             print(3.3, davolanish3)
+
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari3, kasallik_asoratlari2, diagnostika3, davolanish3))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
 
 
 
@@ -224,6 +231,13 @@ for i in list_links:
                 driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'ul')[23].text
             davolanish6 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4 + '\n' + davolanish5
             print(4.3, davolanish6)
+
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari3, kasallik_asoratlari3, diagnostika7, davolanish6))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
 
 
 
@@ -304,6 +318,13 @@ for i in list_links:
             davolanish7 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4 + '\n' + davolanish5 + '\n' + davolanish6
             print(5.3, davolanish7)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari4, kasallik_asoratlari13, diagnostika4, davolanish7))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
@@ -339,11 +360,25 @@ for i in list_links:
                 13].text
             print(6.3, davolanish)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari2, kasallik_asoratlari3, diagnostika, davolanish))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text == 'Аденомиоз':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = \
                 driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[1].text
             print(7, kasallik_sabablari)
@@ -363,10 +398,20 @@ for i in list_links:
                 5].text
             print(7.3, davolanish)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari, kasallik_asoratlari2, diagnostika, davolanish))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text == 'Аднексит':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
 
             kasallik_haqida = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
                 By.CLASS_NAME,
@@ -449,8 +494,24 @@ for i in list_links:
             davolanish11 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4 + '\n' + davolanish5 + '\n' + davolanish6 + '\n' + davolanish7 + '\n' + davolanish8 + '\n' + davolanish9 + '\n' + davolanish10
             print(8.3, davolanish11)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (
+                    kasallik_nomi, kasallik_haqida2, kasallik_sabablari9, kasallik_asoratlari5, diagnostika5,
+                    davolanish11))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text == 'Акромегалия':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = \
                 driver.find_element(By.ID, 'diseases_article_static_content').find_element(By.TAG_NAME, 'ul').text
             print(9, kasallik_sabablari)
@@ -467,12 +528,26 @@ for i in list_links:
                 5].text
             davolanish1 = \
                 driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'ul')[
-                    3].text
+                    12].text
             davolanish2 = davolanish + '\n' + davolanish1
             print(9.3, davolanish2)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari, kasallik_asoratlari, diagnostika, davolanish2))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text == 'Алалия':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = \
                 driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[5].text
             kasallik_sabablari1 = \
@@ -543,9 +618,23 @@ for i in list_links:
             davolanish10 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4 + '\n' + davolanish5 + '\n' + davolanish6 + '\n' + davolanish7
             print(10.3, davolanish10)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari7, kasallik_asoratlari7, diagnostika4, davolanish10))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text == 'Алкоголизм':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = \
                 driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[2].text
             kasallik_sabablari1 = \
@@ -594,10 +683,24 @@ for i in list_links:
             davolanish7 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4 + '\n' + davolanish5 + '\n' + davolanish6
             print(11.3, davolanish7)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari6, kasallik_asoratlari2, diagnostika3, davolanish7))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text == 'Аллергия':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = \
                 driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[9].text
             kasallik_sabablari1 = \
@@ -654,6 +757,13 @@ for i in list_links:
             davolanish6 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4 + '\n' + davolanish5
             print(12.3, davolanish6)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari7, kasallik_asoratlari5, diagnostika4, davolanish6))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
 
@@ -661,6 +771,12 @@ for i in list_links:
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Аллергия инсектная':
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = \
                 driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[3].text
             print(13, kasallik_sabablari)
@@ -690,9 +806,20 @@ for i in list_links:
             davolanish3 = davolanish + '\n' + davolanish1 + '\n' + davolanish2
             print(13.3, davolanish3)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari, kasallik_asoratlari3, diagnostika2, davolanish3))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Аллергия лекарственная':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
             kasallik_haqida = driver.find_element(By.ID, 'diseases_article_static_content').find_element(By.TAG_NAME,
                                                                                                          'p').text
             kasallik_haqida1 = \
@@ -744,12 +871,26 @@ for i in list_links:
             davolanish3 = davolanish + '\n' + davolanish1 + '\n' + davolanish2
             print(14.3, davolanish3)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida3, kasallik_sabablari3, kasallik_asoratlari4, diagnostika5, davolanish3))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Аллергия пищевая':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = \
                 driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[1].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
@@ -788,8 +929,21 @@ for i in list_links:
             davolanish4 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3
             print(15.3, davolanish4)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari3, kasallik_asoratlari2, diagnostika4, davolanish4))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text == 'Алопеция':
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[1].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
@@ -823,16 +977,19 @@ for i in list_links:
             davolanish5 = davolanish + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4
             print(16.3, davolanish5)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari2, kasallik_asoratlari3, diagnostika, davolanish5))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Алопеция андрогенная':
 
-            kasallik_haqida = driver.find_element(By.ID, 'diseases_article_static_content').find_element(By.TAG_NAME,
-                                                                                                         'p').text
-            kasallik_haqida1 = \
-                driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[1].text
-            kasallik_haqida2 = kasallik_haqida + '\n' + kasallik_haqida1
-            print(kasallik_haqida2)
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
 
             kasallik_haqida = \
                 driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[
@@ -881,10 +1038,24 @@ for i in list_links:
             davolanish3 = davolanish + '\n' + davolanish1 + '\n' + davolanish2
             print(17.3, davolanish3)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida2, kasallik_sabablari4, kasallik_asoratlari3, diagnostika3, davolanish3))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Алопеция очаговая':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[3].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -917,9 +1088,23 @@ for i in list_links:
             davolanish2 = davolanish + '\n' + davolanish1
             print(18.3, davolanish2)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari3, kasallik_asoratlari3, diagnostika2, davolanish2))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text == 'Альвеолит':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[2].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -956,10 +1141,24 @@ for i in list_links:
             davolanish3 = davolanish + '\n' + davolanish1 + '\n' + davolanish2
             print(19.3, davolanish3)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari4, kasallik_asoratlari2, diagnostika3, davolanish3))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text == 'Альгоменорея':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[1].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -974,7 +1173,7 @@ for i in list_links:
             kasallik_asoratlari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'ul')[1].text
             kasallik_asoratlari2 = kasallik_asoratlari + '\n' + kasallik_sabablari1
-            print(20.1, kasallik_sabablari2)
+            print(20.1, kasallik_asoratlari2)
 
             diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[5].text
@@ -992,8 +1191,22 @@ for i in list_links:
             davolanish2 = davolanish + '\n' + davolanish1
             print(20.3, davolanish2)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari3, kasallik_asoratlari2, diagnostika3, davolanish2))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text == 'Амблиопия':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
                 By.TAG_NAME, 'ul').text
             print(21, kasallik_sabablari)
@@ -1016,9 +1229,23 @@ for i in list_links:
             davolanish2 = davolanish + '\n' + davolanish1
             print(21.3, davolanish2)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari, kasallik_asoratlari2, diagnostika, davolanish2))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text == 'Аменорея':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[2].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -1050,7 +1277,21 @@ for i in list_links:
             davolanish3 = davolanish + '\n' + davolanish1 + '\n' + davolanish2
             print(22.3, davolanish3)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari5, kasallik_asoratlari, diagnostika, davolanish3))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text == 'Амилоидоз':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[1].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
@@ -1081,10 +1322,24 @@ for i in list_links:
             davolanish3 = davolanish + '\n' + davolanish1 + '\n' + davolanish2
             print(23.3, davolanish3)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari2, kasallik_asoratlari2, diagnostika2, davolanish3))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text == 'Амнезия':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[3].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
@@ -1115,10 +1370,24 @@ for i in list_links:
             davolanish2 = davolanish + '\n' + davolanish1
             print(24.3, davolanish2)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari3, kasallik_asoratlari2, diagnostika2, davolanish2))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Анальная трещина':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[1].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
@@ -1153,8 +1422,22 @@ for i in list_links:
             davolanish4 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3
             print(25.3, davolanish4)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari2, kasallik_asoratlari3, diagnostika2, davolanish4))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text == 'Анальный зуд':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[1].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
@@ -1187,10 +1470,24 @@ for i in list_links:
             davolanish3 = davolanish + '\n' + davolanish1 + '\n' + davolanish2
             print(26.3, davolanish3)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari2, kasallik_asoratlari2, diagnostika3, davolanish3))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Анафилактический шок':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[1].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -1229,9 +1526,23 @@ for i in list_links:
             davolanish4 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3
             print(27.3, davolanish4)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari3, kasallik_asoratlari4, diagnostika2, davolanish4))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text == 'Ангина':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[1].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
@@ -1259,9 +1570,23 @@ for i in list_links:
             davolanish2 = davolanish + '\n' + davolanish1
             print(28.3, davolanish2)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari2, kasallik_asoratlari3, diagnostika, davolanish2))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text == 'Ангиома':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[4].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -1326,6 +1651,13 @@ for i in list_links:
             davolanish8 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4 + '\n' + davolanish5 + '\n' + davolanish6 + '\n' + davolanish7
             print(29.3, davolanish8)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari3, kasallik_asoratlari9, diagnostika6, davolanish8))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
 
@@ -1333,6 +1665,13 @@ for i in list_links:
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Анемия (низкий гемоглобин)':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[12].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -1459,6 +1798,14 @@ for i in list_links:
             davolanish12 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4 + '\n' + davolanish5 + '\n' + davolanish6 + '\n' + davolanish7 + '\n' + davolanish8 + '\n' + davolanish9 + '\n' + davolanish10 + '\n' + davolanish11
             print(30.3, davolanish12)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari9, kasallik_asoratlari27, diagnostika10,
+                 davolanish12))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
 
@@ -1466,6 +1813,13 @@ for i in list_links:
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Анемия железодефицитная':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[1].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
@@ -1498,11 +1852,27 @@ for i in list_links:
             davolanish2 = davolanish + '\n' + davolanish1
             print(31.3, davolanish2)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari2, kasallik_asoratlari2, diagnostika4,
+                 davolanish2))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
+
 
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Аномалия Кимерли':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[3].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -1561,11 +1931,26 @@ for i in list_links:
             davolanish7 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4 + '\n' + davolanish5 + '\n' + davolanish6
             print(32.3, davolanish7)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari3, kasallik_asoratlari5, diagnostika8,
+                 davolanish7))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text == 'Аноргазмия':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[4].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
@@ -1593,9 +1978,24 @@ for i in list_links:
             davolanish3 = davolanish + '\n' + davolanish1 + '\n' + davolanish2
             print(33.3, davolanish3)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari2, kasallik_asoratlari2, diagnostika,
+                 davolanish3))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text == 'Анорексия':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[5].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -1647,9 +2047,25 @@ for i in list_links:
             davolanish6 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4
             print(34.3, davolanish6)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari3, kasallik_asoratlari, diagnostika6,
+                 davolanish6))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
+
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text == 'Апатия':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[2].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -1683,7 +2099,18 @@ for i in list_links:
             davolanish4 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3
             print(35.3, davolanish4)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari2, kasallik_asoratlari4, diagnostika,
+                 davolanish4))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text == 'Апноэ':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
 
             kasallik_haqida = driver.find_element(By.ID, 'diseases_article_static_content').find_element(By.TAG_NAME,
                                                                                                          'p').text
@@ -1728,10 +2155,25 @@ for i in list_links:
             davolanish3 = davolanish + '\n' + davolanish1 + '\n' + davolanish2
             print(36.3, davolanish3)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida3, kasallik_sabablari2, kasallik_asoratlari2, diagnostika4,
+                 davolanish3))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text == 'Аппендицит':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[12].text
 
@@ -1785,7 +2227,23 @@ for i in list_links:
             davolanish5 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4
             print(37.3, davolanish5)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari2, kasallik_asoratlari2, diagnostika8,
+                 davolanish5))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
+
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text == 'Апраксия':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[2].text
             print(38, kasallik_sabablari)
@@ -1813,10 +2271,25 @@ for i in list_links:
             davolanish3 = davolanish + '\n' + davolanish1 + '\n' + davolanish2
             print(38.3, davolanish2)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari, kasallik_asoratlari2, diagnostika2,
+                 davolanish2))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Аритмия дыхания':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[4].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -1851,10 +2324,25 @@ for i in list_links:
             davolanish2 = davolanish + '\n' + davolanish1
             print(39.3, davolanish2)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari3, kasallik_asoratlari3, diagnostika3,
+                 davolanish2))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Аритмия сердца':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[1].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
@@ -1883,10 +2371,25 @@ for i in list_links:
             davolanish2 = davolanish + '\n' + davolanish1
             print(40.3, davolanish2)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari2, kasallik_asoratlari2, diagnostika2,
+                 davolanish2))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Артериальная гипертензия':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
                 By.TAG_NAME, 'p').text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
@@ -1915,9 +2418,24 @@ for i in list_links:
             davolanish2 = davolanish + '\n' + davolanish1
             print(41.3, davolanish2)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari2, kasallik_asoratlari2, diagnostika2,
+                 davolanish2))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Артериальная гипертония':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[15].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -1984,11 +2502,26 @@ for i in list_links:
             davolanish10 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4 + '\n' + davolanish5 + '\n' + davolanish6 + '\n' + davolanish7 + '\n' + davolanish8 + '\n' + davolanish9
             print(42.3, davolanish10)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari4, kasallik_asoratlari4, diagnostika9,
+                 davolanish10))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Артериальная гипотензия':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[6].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -2059,9 +2592,24 @@ for i in list_links:
             davolanish7 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish4 + '\n' + davolanish5 + '\n' + davolanish6
             print(43.3, davolanish7)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari11, kasallik_asoratlari7, diagnostika4,
+                 davolanish7))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Артрит':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[3].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -2094,10 +2642,25 @@ for i in list_links:
             davolanish3 = davolanish + '\n' + davolanish1 + '\n' + davolanish2
             print(44.3, davolanish3)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari3, kasallik_asoratlari2, diagnostika2,
+                 davolanish3))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Астения (астенический синдром)':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[16].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -2166,8 +2729,23 @@ for i in list_links:
             davolanish15 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4 + '\n' + davolanish5 + '\n' + davolanish6 + '\n' + davolanish7 + '\n' + davolanish8 + '\n' + davolanish9 + '\n' + davolanish10 + '\n' + davolanish11 + '\n' + davolanish12 + '\n' + davolanish13 + '\n' + davolanish14
             print(45.3, davolanish15)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari3, kasallik_asoratlari4, diagnostika6,
+                 davolanish15))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text == 'Астенопия':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'ul')[1].text
             print(46, kasallik_sabablari)
@@ -2184,11 +2762,26 @@ for i in list_links:
                 By.TAG_NAME, 'ul')[13].text
             print(46.3, davolanish)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari, kasallik_asoratlari, diagnostika,
+                 davolanish))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Астигматизм':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[6].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -2255,6 +2848,15 @@ for i in list_links:
             davolanish16 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4 + '\n' + davolanish5 + '\n' + davolanish6 + '\n' + davolanish7 + '\n' + davolanish8 + '\n' + davolanish9 + '\n' + davolanish10 + '\n' + davolanish11 + '\n' + davolanish12 + '\n' + davolanish13 + '\n' + davolanish14 + '\n' + davolanish15
             print(47.3, davolanish16)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari2, kasallik_asoratlari4, diagnostika5,
+                 davolanish16))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
+
 
 
 
@@ -2262,6 +2864,13 @@ for i in list_links:
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Асцит':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[1].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -2310,6 +2919,14 @@ for i in list_links:
             davolanish7 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4 + '\n' + davolanish5 + '\n' + davolanish6
             print(48.3, davolanish7)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari5, kasallik_asoratlari2, diagnostika4,
+                 davolanish7))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
 
@@ -2317,6 +2934,12 @@ for i in list_links:
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Атаксия':
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[5].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -2371,6 +2994,13 @@ for i in list_links:
             davolanish6 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4 + '\n' + davolanish5
             print(49.3, davolanish6)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari4, kasallik_asoratlari8, diagnostika3,
+                 davolanish6))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
 
 
 
@@ -2378,6 +3008,13 @@ for i in list_links:
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Атерома':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[3].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -2413,12 +3050,27 @@ for i in list_links:
             davolanish4 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3
             print(50.3, davolanish4)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari3, kasallik_asoratlari4, diagnostika,
+                 davolanish4))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Атеросклероз':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[1].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -2447,10 +3099,25 @@ for i in list_links:
             davolanish2 = davolanish + '\n' + davolanish1
             print(51.3, davolanish2)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari2, kasallik_asoratlari2, diagnostika2,
+                 davolanish2))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Атония мочевого пузыря':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[1].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
@@ -2483,9 +3150,24 @@ for i in list_links:
             davolanish2 = davolanish + '\n' + davolanish1
             print(52.3, davolanish2)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari3, kasallik_asoratlari2, diagnostika3,
+                 davolanish2))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Аутизм':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[3].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
@@ -2539,12 +3221,27 @@ for i in list_links:
             davolanish3 = davolanish + '\n' + davolanish1 + '\n' + davolanish2
             print(53.3, davolanish3)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari2, kasallik_asoratlari12, diagnostika3,
+                 davolanish3))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Аутоиммунный тиреоидит':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
                 By.TAG_NAME, 'ul').text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -2605,10 +3302,25 @@ for i in list_links:
             davolanish13 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4 + '\n' + davolanish5 + '\n' + davolanish6 + '\n' + davolanish7 + "\n" + davolanish8 + '\n' + davolanish9 + '\n' + davolanish9 + '\n' + davolanish10 + '\n' + davolanish11 + '\n' + davolanish12
             print(54.3, davolanish13)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari2, kasallik_asoratlari5, diagnostika4,
+                 davolanish13))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Афазия':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[2].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -2645,11 +3357,26 @@ for i in list_links:
             davolanish2 = davolanish + '\n' + davolanish1
             print(55.3, davolanish2)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari5, kasallik_asoratlari2, diagnostika3,
+                 davolanish2))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Аэроотит':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
                 By.TAG_NAME, 'ul').text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -2669,9 +3396,23 @@ for i in list_links:
                 By.TAG_NAME, 'ul')[13].text
             print(56.3, davolanish)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari2, kasallik_asoratlari, diagnostika,
+                 davolanish))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Базалиома':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[13].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -2726,11 +3467,26 @@ for i in list_links:
             davolanish7 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4 + '\n' + davolanish5 + '\n' + davolanish6
             print(57.3, davolanish6)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari3, kasallik_asoratlari4, diagnostika7,
+                 davolanish6))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Базедова болезнь':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[1].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -2765,11 +3521,26 @@ for i in list_links:
             davolanish3 = davolanish + '\n' + davolanish1 + '\n' + davolanish2
             print(58.3, davolanish3)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari3, kasallik_asoratlari2, diagnostika3,
+                 davolanish3))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Баланит':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[3].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -2799,12 +3570,27 @@ for i in list_links:
                 By.TAG_NAME, 'p')[8].text
             davolanish1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'ul')[5].text
-            diagnostika2 = diagnostika + '\n' + diagnostika1
-            print(59.3, diagnostika2)
+            davolanish2 = diagnostika + '\n' + diagnostika1
+            print(59.3, davolanish2)
+
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari2, kasallik_asoratlari4, diagnostika2,
+                 davolanish2))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Белая горячка':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[1].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -2838,10 +3624,21 @@ for i in list_links:
             davolanish3 = davolanish + '\n' + davolanish1 + '\n' + davolanish2
             print(60.3, davolanish3)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari3, kasallik_asoratlari4, diagnostika,
+                 davolanish3))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Бери-бери':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
             kasallik_haqida = \
                 driver.find_element(By.ID, 'diseases_article_static_content').find_elements(By.TAG_NAME, 'p')[
                     0].text
@@ -2896,10 +3693,25 @@ for i in list_links:
                 By.TAG_NAME, 'p')[11].text
             print(61.3, davolanish)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida8, kasallik_sabablari2, kasallik_asoratlari2, diagnostika3,
+                 davolanish))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Бесплодие у женщин':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[1].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -2971,10 +3783,25 @@ for i in list_links:
             davolanish16 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4 + '\n' + davolanish5 + '\n' + davolanish6 + '\n' + davolanish7 + '\n' + davolanish8 + '\n' + davolanish9 + '\n' + davolanish10 + '\n' + davolanish11 + '\n' + davolanish12 + '\n' + davolanish13 + '\n' + davolanish14
             print(62.3, davolanish16)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari6, kasallik_asoratlari, diagnostika7,
+                 davolanish16))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Бесплодие у мужчин':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[5].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -3050,10 +3877,25 @@ for i in list_links:
             davolanish18 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4 + '\n' + davolanish5 + '\n' + davolanish6 + '\n' + davolanish7 + '\n' + davolanish8 + '\n' + davolanish9 + '\n' + davolanish10 + '\n' + davolanish11 + '\n' + davolanish12 + '\n' + davolanish13 + '\n' + davolanish14 + '\n' + davolanish15 + '\n' + davolanish16
             print(63.3, davolanish18)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari3, kasallik_asoratlari, diagnostika11,
+                 davolanish18))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Бессонница':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
                 By.TAG_NAME, 'ul').text
             print(64, kasallik_sabablari)
@@ -3076,10 +3918,25 @@ for i in list_links:
             davolanish2 = davolanish + '\n' + davolanish1
             print(64.3, davolanish2)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari, kasallik_asoratlari, diagnostika2,
+                 davolanish2))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Блефарит':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'ul')[2].text
             print(65, kasallik_sabablari)
@@ -3099,10 +3956,25 @@ for i in list_links:
             davolanish3 = davolanish1 + '\n' + davolanish2
             print(65.3, davolanish3)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari, kasallik_asoratlari, diagnostika,
+                 davolanish3))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Близорукость':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[8].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -3163,6 +4035,14 @@ for i in list_links:
             davolanish7 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4 + '\n' + davolanish5 + '\n' + davolanish6
             print(66.3, davolanish7)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari12, kasallik_asoratlari3, diagnostika2,
+                 davolanish7))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
 
@@ -3190,6 +4070,13 @@ for i in list_links:
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Болезнь Аддисона':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[6].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -3256,10 +4143,25 @@ for i in list_links:
             davolanish7 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4 + '\n' + davolanish5 + '\n' + davolanish6
             print(68.3, davolanish7)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari2, kasallik_asoratlari9, diagnostika9,
+                 davolanish7))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Болезнь Альцгеймера':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[3].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
@@ -3308,11 +4210,26 @@ for i in list_links:
             davolanish3 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3
             print(69.3, davolanish3)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari4, kasallik_asoratlari4, diagnostika6,
+                 davolanish3))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Болезнь Боуэна':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
                 By.TAG_NAME, 'ul').text
             print(70, kasallik_sabablari)
@@ -3332,9 +4249,24 @@ for i in list_links:
                 By.TAG_NAME, 'ul')[12].text
             print(70.3, davolanish)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari, kasallik_asoratlari, diagnostika2,
+                 davolanish))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Болезнь Виллебранда':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[2].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
@@ -3347,7 +4279,7 @@ for i in list_links:
             kasallik_asoratlari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'ul')[1].text
             kasallik_asoratlari2 = kasallik_asoratlari + '\n' + kasallik_asoratlari1
-            print(71.1, kasallik_sabablari2)
+            print(71.1, kasallik_asoratlari2)
 
             diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[5].text
@@ -3365,14 +4297,25 @@ for i in list_links:
             davolanish2 = davolanish + '\n' + davolanish1
             print(71.3, davolanish2)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari2, kasallik_asoratlari2, diagnostika3,
+                 davolanish2))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
 
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Болезнь Иценко-Кушинга':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
             kasallik_haqida = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
                 By.TAG_NAME, 'p').text
-            print(kasallik_haqida, )
+            print(kasallik_haqida)
 
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
                 By.TAG_NAME, 'ul').text
@@ -3390,8 +4333,24 @@ for i in list_links:
                 By.TAG_NAME, 'ul')[12].text
             print(72.3, davolanish)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari, kasallik_asoratlari, diagnostika,
+                 davolanish))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
+
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Болезнь Крона':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[1].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
@@ -3424,10 +4383,21 @@ for i in list_links:
             davolanish3 = davolanish + '\n' + davolanish1 + '\n' + davolanish2
             print(73.3, davolanish3)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari3, kasallik_asoratlari2, diagnostika2,
+                 davolanish3))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Болезнь Паркинсона':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
 
             kasallik_haqida = driver.find_element(By.ID, 'diseases_article_static_content').find_element(By.TAG_NAME,
                                                                                                          'p').text
@@ -3490,10 +4460,90 @@ for i in list_links:
             kasallik_asoratlari16 = kasallik_asoratlari + '\n' + kasallik_asoratlari1 + '\n' + kasallik_asoratlari2 + '\n' + kasallik_asoratlari3 + '\n' + kasallik_asoratlari4 + '\n' + kasallik_asoratlari5 + '\n' + kasallik_asoratlari6 + '\n' + kasallik_asoratlari7 + '\n' + kasallik_asoratlari8 + '\n' + kasallik_asoratlari9 + '\n' + kasallik_asoratlari10 + '\n' + kasallik_asoratlari11 + '\n' + kasallik_asoratlari12 + '\n' + kasallik_asoratlari13 + '\n' + kasallik_asoratlari14 + '\n' + kasallik_asoratlari15
             print(74.1, kasallik_asoratlari16)
 
+            diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[29].text
+            diagnostika1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[30].text
+            diagnostika2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[31].text
+            diagnostika3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[32].text
+            diagnostika4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[33].text
+            diagnostika5 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[20].text
+            diagnostika6 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[34].text
+            diagnostika7 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[35].text
+            diagnostika8 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[21].text
+            diagnostika9 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[36].text
+            diagnostika10 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[22].text
+            diagnostika11 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[37].text
+            diagnostika12 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[38].text
+            diagnostika13 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[23].text
+            diagnostika14 = diagnostika + '\n' + diagnostika1 + '\n' + diagnostika2 + '\n' + diagnostika3 + '\n' + diagnostika4 + '\n' + diagnostika5 + '\n' + diagnostika6 + '\n' + diagnostika7 + '\n' + diagnostika8 + '\n' + diagnostika9 + '\n' + '\n' + diagnostika10 + '\n' + diagnostika11 + '\n' + diagnostika12 + '\n' + diagnostika13
+            print(74.2, diagnostika14)
+
+            davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[39].text
+            davolanish1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[24].text
+            davolanish2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[40].text
+            davolanish3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[41].text
+            davolanish4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[42].text
+            davolanish5 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[43].text
+            davolanish6 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[44].text
+            davolanish7 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[45].text
+            davolanish8 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[24].text
+            davolanish9 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[46].text
+            davolanish10 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[47].text
+            davolanish11 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[25].text
+            davolanish12 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[48].text
+            davolanish13 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[49].text
+            davolanish14 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[26].text
+            davolanish15 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4 + '\n' + davolanish5 + '\n' + davolanish6 + '\n' + davolanish7 + '\n' + davolanish8 + '\n' + davolanish9 + '\n' + davolanish10 + '\n' + davolanish11 + '\n' + davolanish12 + '\n' + davolanish13 + '\n' + davolanish14
+            print(74.3, davolanish15)
+
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida5, kasallik_sabablari5, kasallik_asoratlari16, diagnostika14,
+                 davolanish15))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
+
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Болезнь Пейрони':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[2].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -3528,12 +4578,27 @@ for i in list_links:
             davolanish2 = davolanish + '\n' + davolanish1
             print(75.3, davolanish2)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari3, kasallik_asoratlari3, diagnostika3,
+                 davolanish2))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Болезнь Пика':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[1].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -3572,6 +4637,14 @@ for i in list_links:
             davolanish3 = davolanish + '\n' + davolanish1 + '\n' + davolanish2
             print(76.3, davolanish3)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari4, kasallik_asoratlari3, diagnostika3,
+                 davolanish3))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
 
@@ -3579,6 +4652,13 @@ for i in list_links:
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Болезнь Симмондса':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[2].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
@@ -3620,11 +4700,26 @@ for i in list_links:
                 By.TAG_NAME, 'p')[13].text
             print(77.3, davolanish)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari5, kasallik_asoratlari7, diagnostika2,
+                 davolanish))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
 
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Бородавки подошвенные':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[6].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -3713,8 +4808,23 @@ for i in list_links:
             davolanish30 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4 + '\n' + davolanish5 + '\n' + davolanish6 + '\n' + davolanish7 + '\n' + davolanish8 + '\n' + davolanish9 + '\n' + davolanish10 + '\n' + davolanish11 + '\n' + davolanish12 + '\n' + davolanish13 + '\n' + davolanish14 + '\n' + davolanish15 + '\n' + davolanish16 + '\n' + davolanish17 + '\n' + davolanish18 + '\n' + davolanish19 + '\n' + davolanish20 + '\n' + davolanish21 + '\n' + davolanish22 + '\n' + davolanish23 + '\n' + davolanish24 + '\n' + davolanish25 + '\n' + davolanish26 + '\n' + davolanish27 + '\n' + davolanish28
             print(78.3, davolanish30)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari4, kasallik_asoratlari2, diagnostika2,
+                 davolanish30))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Брадикардия':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[2].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -3815,8 +4925,23 @@ for i in list_links:
             davolanish18 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4 + '\n' + davolanish5 + '\n' + davolanish6 + '\n' + davolanish7 + '\n' + davolanish8 + '\n' + davolanish9 + '\n' + davolanish10 + '\n' + davolanish11 + '\n' + davolanish12 + '\n' + davolanish13 + '\n' + davolanish14 + '\n' + davolanish15 + '\n' + davolanish16 + '\n' + davolanish17
             print(79.3, davolanish18)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari5, kasallik_asoratlari3, diagnostika18,
+                 davolanish18))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Бронхиальная астма':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[2].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -3847,9 +4972,24 @@ for i in list_links:
             davolanish2 = davolanish + '\n' + davolanish1
             print(80.3, davolanish2)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari3, kasallik_asoratlari, diagnostika2,
+                 davolanish2))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Бронхиолит':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[1].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -3886,8 +5026,23 @@ for i in list_links:
             davolanish2 = davolanish + '\n' + davolanish1
             print(81.3, davolanish2)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari3, kasallik_asoratlari4, diagnostika3,
+                 davolanish2))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Бронхит':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[2].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -3924,9 +5079,24 @@ for i in list_links:
             davolanish2 = davolanish + '\n' + davolanish1
             print(82.3, davolanish2)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari6, kasallik_asoratlari2, diagnostika2,
+                 davolanish2))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Бронхит обструктивный':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[6].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -3945,7 +5115,7 @@ for i in list_links:
             kasallik_asoratlari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[10].text
             kasallik_asoratlari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'ul')[11].text
+                By.TAG_NAME, 'ul')[18].text
             kasallik_asoratlari2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[11].text
             kasallik_asoratlari3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -3957,7 +5127,7 @@ for i in list_links:
             kasallik_asoratlari6 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[15].text
             kasallik_asoratlari7 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'ul')[13].text
+                By.TAG_NAME, 'ul')[19].text
             kasallik_asoratlari8 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[16].text
             kasallik_asoratlari9 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -3966,56 +5136,56 @@ for i in list_links:
             print(83.1, kasallik_asoratlari10)
 
             diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'p')[19].text
-            diagnostika1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'ul')[14].text
-            diagnostika2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[20].text
-            diagnostika3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'ul')[15].text
-            diagnostika4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+            diagnostika1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[20].text
+            diagnostika2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[21].text
-            diagnostika5 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+            diagnostika3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[21].text
+            diagnostika4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[22].text
-            diagnostika6 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'ul')[16].text
-            diagnostika7 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+            diagnostika5 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[23].text
-            diagnostika8 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+            diagnostika6 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'ul')[22].text
+            diagnostika7 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[24].text
-            diagnostika9 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+            diagnostika8 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[25].text
-            diagnostika10 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+            diagnostika9 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[26].text
-            diagnostika11 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+            diagnostika10 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[27].text
+            diagnostika11 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[28].text
             diagnostika12 = diagnostika + '\n' + diagnostika1 + '\n' + diagnostika2 + '\n' + diagnostika3 + '\n' + diagnostika4 + '\n' + diagnostika5 + '\n' + diagnostika6 + '\n' + diagnostika7 + '\n' + diagnostika8 + '\n' + diagnostika9 + '\n' + '\n' + diagnostika10 + '\n' + diagnostika11
             print(83.2, diagnostika12)
 
             davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[28].text
             davolanish1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'ul')[17].text
+                By.TAG_NAME, 'ul')[23].text
             davolanish2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[29].text
             davolanish3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'ul')[18].text
+                By.TAG_NAME, 'ul')[24].text
             davolanish4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[30].text
             davolanish5 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'ul')[19].text
+                By.TAG_NAME, 'ul')[25].text
             davolanish6 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[31].text
             davolanish7 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'ul')[20].text
+                By.TAG_NAME, 'ul')[26].text
             davolanish8 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[32].text
             davolanish9 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'ul')[21].text
+                By.TAG_NAME, 'ul')[27].text
             davolanish10 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[33].text
             davolanish11 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'ul')[22].text
+                By.TAG_NAME, 'ul')[28].text
             davolanish12 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[34].text
             davolanish13 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -4023,12 +5193,27 @@ for i in list_links:
             davolanish14 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[36].text
             davolanish15 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'ul')[23].text
+                By.TAG_NAME, 'ul')[29].text
             davolanish16 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4 + '\n' + davolanish5 + '\n' + davolanish6 + '\n' + davolanish7 + '\n' + davolanish8 + '\n' + davolanish9 + '\n' + davolanish10 + '\n' + davolanish11 + '\n' + davolanish12 + '\n' + davolanish13 + '\n' + davolanish14 + '\n' + davolanish15
             print(83.3, davolanish16)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari6, kasallik_asoratlari10, diagnostika12,
+                 davolanish16))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Булимия':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[1].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
@@ -4054,8 +5239,23 @@ for i in list_links:
             davolanish2 = davolanish + '\n' + davolanish1
             print(84.3, davolanish2)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari2, kasallik_asoratlari2, diagnostika,
+                 davolanish2))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Бурсит':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[0].text
             print(85, kasallik_sabablari)
@@ -4075,8 +5275,23 @@ for i in list_links:
             davolanish2 = davolanish + '\n' + davolanish1
             print(85.3, davolanish2)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari, kasallik_asoratlari, diagnostika,
+                 davolanish2))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Булимия':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[1].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
@@ -4101,8 +5316,23 @@ for i in list_links:
                 By.TAG_NAME, 'ul')[11].text
             print(86.3, davolanish)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari2, kasallik_asoratlari2, diagnostika,
+                 davolanish))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Вагинит':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
                 By.TAG_NAME, 'p').text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -4133,8 +5363,23 @@ for i in list_links:
             davolanish3 = davolanish + '\n' + davolanish1 + '\n' + davolanish2
             print(87.3, davolanish3)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari2, kasallik_asoratlari2, diagnostika2,
+                 davolanish3))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Вальгусная деформация стопы у детей':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[5].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -4177,8 +5422,23 @@ for i in list_links:
             davolanish5 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4
             print(88.3, davolanish5)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari5, kasallik_asoratlari, diagnostika2,
+                 davolanish5))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Варикозное расширение вен':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[2].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
@@ -4209,8 +5469,23 @@ for i in list_links:
             davolanish2 = davolanish + '\n' + davolanish1
             print(89.3, davolanish2)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari2, kasallik_asoratlari3, diagnostika2,
+                 davolanish2))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Варикоцеле':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[6].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -4333,8 +5608,23 @@ for i in list_links:
             davolanish29 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4 + '\n' + davolanish5 + '\n' + davolanish6 + '\n' + davolanish7 + '\n' + davolanish8 + '\n' + davolanish9 + '\n' + davolanish10 + '\n' + davolanish11 + '\n' + davolanish12 + '\n' + davolanish13 + '\n' + davolanish14 + '\n' + davolanish15 + '\n' + davolanish16 + '\n' + davolanish17 + '\n' + davolanish18 + '\n' + davolanish19 + '\n' + davolanish20 + '\n' + davolanish21 + '\n' + davolanish22 + '\n' + davolanish23 + '\n' + davolanish24 + '\n' + davolanish25 + '\n' + davolanish26 + '\n' + davolanish27 + '\n' + davolanish28
             print(90.3, davolanish29)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari5, kasallik_asoratlari5, diagnostika16,
+                 davolanish29))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Васкулит':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[3].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -4354,7 +5644,7 @@ for i in list_links:
             diagnostika1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'ul')[25].text
             diagnostika2 = diagnostika + '\n' + diagnostika1
-            print(91.1, diagnostika2)
+            print(91.2, diagnostika2)
 
             davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[7].text
@@ -4363,10 +5653,26 @@ for i in list_links:
             davolanish2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[48].text
             davolanish3 = davolanish + '\n' + davolanish1 + '\n' + davolanish2
-            print(91.1, davolanish3)
+            print(91.3, davolanish3)
+
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari2, kasallik_asoratlari2, diagnostika2,
+                 davolanish3))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
 
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Васкулит геморрагический':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[1].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
@@ -4397,7 +5703,21 @@ for i in list_links:
             davolanish2 = davolanish + '\n' + davolanish1
             print(91.3, davolanish2)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari2, kasallik_asoratlari2, diagnostika3,
+                 davolanish2))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text == 'Вегетоневроз':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
 
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[1].text
@@ -4457,8 +5777,23 @@ for i in list_links:
             davolanish7 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4 + '\n' + davolanish5 + '\n' + davolanish6
             print(92.3, davolanish7)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari3, kasallik_asoratlari11, diagnostika2,
+                 davolanish7))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Вегетососудистая дистония (ВСД)':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[5].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -4478,61 +5813,76 @@ for i in list_links:
             diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[9].text
             diagnostika1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'ul')[23].text
+                By.TAG_NAME, 'ul')[14].text
             diagnostika2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[10].text
             diagnostika3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'ul')[24].text
+                By.TAG_NAME, 'ul')[15].text
             diagnostika4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'p')[19].text
+                By.TAG_NAME, 'p')[11].text
             diagnostika5 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'ul')[25].text
+                By.TAG_NAME, 'ul')[16].text
             diagnostika6 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'p')[20].text
+                By.TAG_NAME, 'p')[12].text
             diagnostika7 = diagnostika + '\n' + diagnostika1 + '\n' + diagnostika2 + '\n' + diagnostika3 + '\n' + diagnostika4 + '\n' + diagnostika5 + '\n' + diagnostika6
             print(93.2, diagnostika7)
 
             davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'p')[21].text
+                By.TAG_NAME, 'p')[13].text
             davolanish1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'p')[22].text
+                By.TAG_NAME, 'p')[14].text
             davolanish2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'p')[23].text
+                By.TAG_NAME, 'p')[15].text
             davolanish3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'p')[24].text
+                By.TAG_NAME, 'p')[16].text
             davolanish4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'p')[25].text
+                By.TAG_NAME, 'p')[17].text
             davolanish5 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'p')[26].text
+                By.TAG_NAME, 'p')[18].text
             davolanish6 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'p')[27].text
+                By.TAG_NAME, 'p')[19].text
             davolanish7 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'p')[28].text
+                By.TAG_NAME, 'p')[20].text
             davolanish8 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'p')[29].text
+                By.TAG_NAME, 'p')[21].text
             davolanish9 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'p')[30].text
+                By.TAG_NAME, 'p')[22].text
             davolanish10 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'p')[31].text
+                By.TAG_NAME, 'p')[23].text
             davolanish11 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'p')[32].text
+                By.TAG_NAME, 'p')[24].text
             davolanish12 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'p')[33].text
+                By.TAG_NAME, 'p')[25].text
             davolanish13 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'p')[34].text
+                By.TAG_NAME, 'p')[26].text
             davolanish14 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'p')[35].text
+                By.TAG_NAME, 'p')[27].text
             davolanish15 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'p')[36].text
+                By.TAG_NAME, 'p')[28].text
             davolanish16 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'p')[37].text
+                By.TAG_NAME, 'p')[29].text
             davolanish17 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'ul')[26].text
+                By.TAG_NAME, 'ul')[17].text
             davolanish18 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3 + '\n' + davolanish4 + '\n' + davolanish5 + '\n' + davolanish6 + '\n' + davolanish7 + '\n' + davolanish8 + '\n' + davolanish9 + '\n' + davolanish10 + '\n' + davolanish11 + '\n' + davolanish12 + '\n' + davolanish13 + '\n' + davolanish14 + '\n' + davolanish15 + '\n' + davolanish16 + '\n' + davolanish17
             print(93.3, davolanish18)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari, kasallik_asoratlari3, diagnostika7,
+                 davolanish18))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Везикулит':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[1].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -4563,8 +5913,23 @@ for i in list_links:
             davolanish2 = davolanish + '\n' + davolanish1
             print(94.3, davolanish2)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari3, kasallik_asoratlari2, diagnostika2,
+                 davolanish2))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Венозная недостаточность':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[1].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -4605,14 +5970,30 @@ for i in list_links:
             davolanish4 = davolanish + '\n' + davolanish1 + '\n' + davolanish2 + '\n' + davolanish3
             print(95.3, davolanish4)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari3, kasallik_asoratlari5, diagnostika2,
+                 davolanish4))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Вертебро-базилярная недостаточность (ВБН)':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.ID, 'diseases_article_static_content').find_element(By.TAG_NAME,
+                                                                                                         'p').text
+            print(kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
                 By.TAG_NAME, 'ul').text
             print(96, kasallik_sabablari)
 
             kasallik_asoratlari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'p')[1].text
+                By.TAG_NAME, 'ul')[1].text
             print(96.1, kasallik_asoratlari)
 
             diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -4626,60 +6007,90 @@ for i in list_links:
                 By.TAG_NAME, 'ul')[11].text
             print(96.3, davolanish)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari, kasallik_asoratlari, diagnostika2,
+                 davolanish))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Ветрянка (ветряная оспа)':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'p')[6].text
-            kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[7].text
+            kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[8].text
             kasallik_sabablari2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'ul')[2].text
             kasallik_sabablari3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'p')[8].text
-            kasallik_sabablari4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[9].text
-            kasallik_sabablari5 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+            kasallik_sabablari4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[10].text
-            kasallik_sabablari6 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+            kasallik_sabablari5 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[11].text
-            kasallik_sabablari7 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+            kasallik_sabablari6 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[12].text
+            kasallik_sabablari7 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[13].text
             kasallik_sabablari8 = kasallik_sabablari + '\n' + kasallik_sabablari1 + '\n' + kasallik_sabablari2 + '\n' + kasallik_sabablari3 + '\n' + kasallik_sabablari4 + '\n' + kasallik_sabablari5 + '\n' + kasallik_sabablari6 + '\n' + kasallik_sabablari7
             print(97, kasallik_sabablari8)
 
             kasallik_asoratlari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'p')[13].text
+                By.TAG_NAME, 'p')[15].text
             kasallik_asoratlari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'ul')[12].text
             kasallik_asoratlari2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'p')[14].text
-            kasallik_asoratlari3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'p')[15].text
-            kasallik_asoratlari4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[16].text
-            kasallik_asoratlari5 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+            kasallik_asoratlari3 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[17].text
+            kasallik_asoratlari4 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[18].text
+            kasallik_asoratlari5 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
+                By.TAG_NAME, 'p')[19].text
             kasallik_asoratlari6 = kasallik_asoratlari + '\n' + kasallik_asoratlari1 + '\n' + kasallik_asoratlari2 + '\n' + kasallik_asoratlari3 + '\n' + kasallik_asoratlari4 + '\n' + kasallik_asoratlari5
             print(97.1, kasallik_asoratlari6)
 
             diagnostika = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'p')[19].text
+                By.TAG_NAME, 'p')[21].text
             diagnostika1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'p')[20].text
+                By.TAG_NAME, 'p')[22].text
             diagnostika2 = diagnostika + '\n' + diagnostika1
             print(97.2, diagnostika2)
 
             davolanish = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'p')[21].text
+                By.TAG_NAME, 'p')[23].text
             davolanish1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'ul')[22].text
+                By.TAG_NAME, 'ul')[13].text
             davolanish2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'p')[22].text
+                By.TAG_NAME, 'p')[24].text
             davolanish3 = davolanish + '\n' + davolanish1 + '\n' + davolanish2
             print(97.3, davolanish3)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari8, kasallik_asoratlari6, diagnostika2,
+                 davolanish3))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Вирильный синдром':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[3].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -4705,10 +6116,25 @@ for i in list_links:
             davolanish2 = davolanish + '\n' + davolanish1
             print(98.3, davolanish2)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari2, kasallik_asoratlari, diagnostika2,
+                 davolanish2))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Вирус Эпштейна-Барра':
-            kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
-                By.TAG_NAME, 'ul')[2].text
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
+            kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
+                By.TAG_NAME, 'ul').text
             print(99, kasallik_sabablari)
 
             kasallik_asoratlari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
@@ -4732,8 +6158,23 @@ for i in list_links:
             davolanish2 = davolanish + '\n' + davolanish1
             print(99.3, davolanish2)
 
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari, kasallik_asoratlari2, diagnostika2,
+                 davolanish2))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+
         elif driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME,
                                                                               'h1').text == 'Витилиго':
+
+            kasallik_nomi = driver.find_element(By.CLASS_NAME, 'library__ills').find_element(By.TAG_NAME, 'h1').text
+            print('--------', kasallik_nomi)
+
+            kasallik_haqida = driver.find_element(By.CLASS_NAME, 'illnes-short-description').text
+            print('--------', kasallik_haqida)
+
             kasallik_sabablari = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[1].text
             kasallik_sabablari1 = driver.find_element(By.ID, 'diseases_article_static_content').find_element(
@@ -4763,62 +6204,20 @@ for i in list_links:
                 By.TAG_NAME, 'ul')[12].text
             davolanish2 = driver.find_element(By.ID, 'diseases_article_static_content').find_elements(
                 By.TAG_NAME, 'p')[7].text
-            davolanish3 = davolanish +'\n'+ davolanish1 +'\n'+ davolanish
+            davolanish3 = davolanish + '\n' + davolanish1 + '\n' + davolanish
+            print(100.3, davolanish3)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+            cursor.execute(
+                "INSERT INTO basic_app_болезни1 (title, description,description1,description2,description3,description4) VALUES (?,?,?,?,?,?)",
+                (kasallik_nomi, kasallik_haqida, kasallik_sabablari2, kasallik_asoratlari2, diagnostika2,
+                 davolanish3))
+            connect.commit()
+            a = cursor.execute('SELECT * FROM basic_app_болезни1')
+            print(a)
+            break
 
 
     except:
         print('topilmadi-----------')
-        continue
+        # continue
 driver.close()
