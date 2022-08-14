@@ -18,8 +18,6 @@ while i < 700:
         if 31 <= i < 661:
             list_links.append(a)
         i += 1
-        if i == 140:
-            break
 
 # continue
 # print(list_links)

@@ -27,7 +27,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'basic_app'
+    'basic_app',
+    'rest_framework'
 ]
 
 MIDDLEWARE = [
@@ -39,6 +40,11 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+# REST_FRAMEWORK = {
+# 'DEFAULT_PAGINATION_CLASS': 'my_project.apps.core.pagination.CustomPagination',
+# 'PAGE_SIZE': 10
+# }
 
 ROOT_URLCONF = 'nutra_.urls'
 
